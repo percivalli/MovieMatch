@@ -28,3 +28,5 @@ Usuário antigo: login > busca.
 Comportamento da App
 
 Na tela de busca, o usuário escolhe com quem ou não ele tem interesse em manter contato. Caso a pessoa ainda não tenha dado o like dele, ele fica numa lista de espera. Cedo ou tarde, devido aos interesses em comum, ele vai aparecer na lista do outro usuário e, caso haja reciprocidade no like, a tela de É um Match aparece, dando a opção de conversa entre eles – por fora da app (no caso, vamos chamar o aplicativo de e-mail padrão do aparelho do usuário, que já virá com endereço e título preenchidos). Caso o usuário tenha interesse em alterações algo em seu perfil, ele conseguirá acesso pela tela de busca. Na tela de perfil que ele também terá acesso aos contatos que já deram match com ele. Se possível, enviar um push notification quando rolar um match.
+
+Link MarvelApp: https://marvelapp.com/bg6eji4/screen/56899024
