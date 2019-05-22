@@ -32,3 +32,5 @@ Na tela de busca, o usuário escolhe com quem ou não ele tem interesse em mante
 Link MarvelApp: https://marvelapp.com/bg6eji4/screen/56899024
 
 Link Trello: https://trello.com/b/GaZw2XW4/grupo-5-movie-match
+
+Para solicitações de acesso, favor enviar e-mail para thamuz.khaos@gmail.com
