@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         btnGoogle = findViewById(R.id.btnGoogle);
         btnTermos = findViewById(R.id.btnTermos);
 
-        btnCriar.setOnClickListener(this);
-        btnFacebook.setOnClickListener(this);
-        btnGoogle.setOnClickListener(this);
-        btnTermos.setOnClickListener(this);
+        //btnCriar.setOnClickListener(this);
+        //btnFacebook.setOnClickListener(this);
+        //btnGoogle.setOnClickListener(this);
+        //btnTermos.setOnClickListener(this);
     }
 
     public void telaCriar(View v) {}
