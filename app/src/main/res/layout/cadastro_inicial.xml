@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#585280"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="540dp"
+        android:layout_height="112dp"
+        android:background="#263445"
+        android:minHeight="110dp"
+        android:paddingLeft="30dp"
+        android:theme="?attr/actionBarTheme"
+        app:maxButtonHeight="56dp"
+        app:navigationIcon="@mipmap/filme"
+        app:title="@string/cadastro_do_usuario"
+        app:titleMargin="40dp"
+        app:titleMarginStart="40dp"
+        app:titleTextColor="#F7FF00" />
+
+
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:inputType="text"
+        android:padding="20dp"
+        android:hint="@string/nome"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextIdade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:inputType="number"
+        android:padding="20dp"
+        android:hint="@string/idade"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextSexo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:inputType="text"
+        android:padding="20dp"
+        android:hint="@string/sexo"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:inputType="text"
+        android:padding="20dp"
+        android:hint= "@string/cidade"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:textColorHint="#ffffff"
+        android:drawableLeft="@android:drawable/sym_action_email"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#976DD0"
+        android:drawableLeft= "@android:drawable/ic_lock_idle_lock"
+        android:drawableRight="@android:drawable/ic_menu_view"
+        android:hint="@string/senha"
+        android:inputType="numberPassword"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:textColorHint="#ffffff" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="183dp"
+            android:layout_height="42dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="4dp"
+            android:background="#F7FF00"
+            android:text="@string/finalizar"
+            android:textColor="#585280" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
