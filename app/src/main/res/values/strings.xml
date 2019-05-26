@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Movie Match</string>
-</resources>
+    <string name="cadastro_do_usuario">CADASTRO DO USUÁRIO</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="nome">Nome</string>
+    <string name="idade">Idade</string>
+    <string name="sexo">Sexo</string>
+    <string name="cidade">Cidade</string>
+    <string name="finalizar">Finalizar</string>
+    </resources>
