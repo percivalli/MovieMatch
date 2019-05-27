@@ -1,68 +1,35 @@
 package br.com.digitalhouse.moviematch.Cadastro;
 
-public class Cadastro {
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.EditText;
 
-    private String nome;
-    private int idade;
-    private String sexo;
-    private String cidade;
-    private String email;
-    private String senha;
+import br.com.digitalhouse.moviematch.R;
 
-    public Cadastro(String nome, int idade, String sexo, String cidade, String email, String senha) {
-        this.nome = nome;
-        this.idade = idade;
-        this.sexo = sexo;
-        this.cidade = cidade;
-        this.email = email;
-        this.senha = senha;
-    }
+public class Cadastro extends AppCompatActivity {
 
-    public String getNome() {
-        return nome;
-    }
+    private EditText editTextName;
+    private EditText editTextIdade;
+    private EditText editTextSexo;
+    private EditText editTextCidade;
+    private EditText editTextEmail;
+    private EditText editTextSenha;
+    private Button btnFinalizar;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.cadastro_inicial);
 
-    public int getIdade() {
-        return idade;
-    }
+        editTextName = (EditText) findViewById(R.id.editTextNome);
+        editTextIdade = (EditText) findViewById(R.id.editTextIdade);
+        editTextSexo = (EditText) findViewById(R.id.editTextSexo);
+        editTextCidade = (EditText) findViewById(R.id.editTextCidade);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextSenha = (EditText) findViewById(R.id.editTextSenha);
+        btnFinalizar = (Button) findViewById(R.id.btnLogin);
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 
-    public String getSexo() {
-        return sexo;
-    }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 }
