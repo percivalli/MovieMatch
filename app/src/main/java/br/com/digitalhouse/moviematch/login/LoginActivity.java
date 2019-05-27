@@ -32,5 +32,5 @@ public class LoginActivity extends AppCompatActivity {
         //btnTermos.setOnClickListener(this);
     }
 
-    //public void telaCriar(View v) {}
+    
 }
