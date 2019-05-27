@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movie Match</string>
+    <string name="li_e_concordo_com_os_termos_de_uso">Li e concordo com os termos de uso.</string>
+    <string name="login_google">LOGIN GOOGLE</string>
+    <string name="login_facebook">LOGIN FACEBOOK</string>
+    <string name="criar_conta">CRIAR CONTA</string>
+
 </resources>

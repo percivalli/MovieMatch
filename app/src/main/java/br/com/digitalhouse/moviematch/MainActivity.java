@@ -8,10 +8,10 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnCriar;
-    Button btnFacebook;
-    Button btnGoogle;
-    Switch btnTermos;
+    //Button btnCriar;
+    //Button btnFacebook;
+    //Button btnGoogle;
+    //Switch btnTermos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        btnCriar = findViewById(R.id.btnCriar);
-        btnFacebook = findViewById(R.id.btnFacebook);
-        btnGoogle = findViewById(R.id.btnGoogle);
-        btnTermos = findViewById(R.id.btnTermos);
+        //btnCriar = findViewById(R.id.btnCriar);
+        //btnFacebook = findViewById(R.id.btnFacebook);
+        //btnGoogle = findViewById(R.id.btnGoogle);
+        //btnTermos = findViewById(R.id.btnTermos);
 
         //btnCriar.setOnClickListener(this);
         //btnFacebook.setOnClickListener(this);
@@ -30,5 +30,5 @@ public class MainActivity extends AppCompatActivity {
         //btnTermos.setOnClickListener(this);
     }
 
-    public void telaCriar(View v) {}
+    //public void telaCriar(View v) {}
 }
