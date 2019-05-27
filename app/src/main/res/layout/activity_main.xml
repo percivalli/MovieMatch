@@ -9,9 +9,9 @@
     <RelativeLayout
         android:layout_width="334dp"
         android:layout_height="67dp"
+        android:layout_alignEnd="@+id/btnCriar"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="69dp"
         android:background="@drawable/logo_texto_01"
         android:gravity="center"
         android:orientation="horizontal"
@@ -107,8 +107,8 @@
 
     <android.support.v7.widget.SwitchCompat
         android:id="@+id/btnTermos"
-        android:layout_width="309dp"
-        android:layout_height="41dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/btnGoogle"
         android:layout_alignStart="@+id/btnGoogle"
         android:layout_alignEnd="@+id/btnGoogle"
