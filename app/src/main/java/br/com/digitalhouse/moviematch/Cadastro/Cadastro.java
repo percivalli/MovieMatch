@@ -29,7 +29,6 @@ public class Cadastro extends AppCompatActivity {
         editTextSenha = (EditText) findViewById(R.id.editTextSenha);
         btnFinalizar = (Button) findViewById(R.id.btnLogin);
 
-
-
     }
+
 }
