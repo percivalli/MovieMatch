@@ -65,14 +65,12 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        /*
         if(email != null && password != null){
-            Intent intent = new Intent(LoginActivity.this,Cadastro.class);
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
         }else {
             Snackbar.make(textInputLayoutEmail, "Email ou Senha inválidos", Snackbar.LENGTH_SHORT);
         }
-        */
     }
 
     /* Método para validar os campos de e-mail e senha e seguir para a tela de perfil
