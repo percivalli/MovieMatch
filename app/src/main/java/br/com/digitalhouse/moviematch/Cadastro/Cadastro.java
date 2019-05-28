@@ -7,11 +7,13 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
+
+import java.util.Objects;
+
+import br.com.digitalhouse.moviematch.MainActivity;
 import br.com.digitalhouse.moviematch.R;
-import br.com.digitalhouse.moviematch.perfil.Perfil;
+
 
 public class Cadastro extends AppCompatActivity {
 
@@ -53,20 +55,14 @@ public class Cadastro extends AppCompatActivity {
                     return;
                 }if(cidade.isEmpty()){
                     editTextCidade.setError("Cidade não pode ser vazio");
-                }if (nome.equals(nome) && idade.equals(idade) && sexo.equals(sexo) && cidade.equals(cidade)){
-                    Intent intent = new Intent(Cadastro.this, Perfil.class);
-                    Bundle bundle = new Bundle();
-                    bundle.getString(nome, idade);
-
-                    intent.putExtras(bundle);
+                    return;
+                }if (nome  != null && idade!= null && sexo != null && cidade != null){
+                    Intent intent = new Intent(Cadastro.this, MainActivity.class);
 
                     startActivity(intent);
                 }else {
                     Snackbar.make(editTextName, "Nome, idade, sexo ou cidade invalidos", Snackbar.LENGTH_SHORT).show();
                 }
-
-
-                startActivity(new Intent(getApplicationContext(), Perfil.class));
 
             }
         });
