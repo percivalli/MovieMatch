@@ -68,10 +68,6 @@ public class LoginActivity extends AppCompatActivity {
         /*
         if(email != null && password != null){
             Intent intent = new Intent(LoginActivity.this,Cadastro.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("EMAIL",email);
-            intent.putExtras(bundle);
-
             startActivity(intent);
         }else {
             Snackbar.make(textInputLayoutEmail, "Email ou Senha inválidos", Snackbar.LENGTH_SHORT);
@@ -96,10 +92,6 @@ public class LoginActivity extends AppCompatActivity {
 
         if(email != null && password != null){
             Intent intent = new Intent(LoginActivity.this,ProfileActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("EMAIL",email);
-            intent.putExtras(bundle);
-
             startActivity(intent);
         }else {
             Snackbar.make(textInputLayoutEmail, "Email ou Senha inválidos", Snackbar.LENGTH_SHORT);
