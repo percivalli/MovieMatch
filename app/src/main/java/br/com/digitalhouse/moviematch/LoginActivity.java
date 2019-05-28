@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
 
         /*
         if(email != null && password != null){
-            Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+            Intent intent = new Intent(LoginActivity.this,Cadastro.class);
             Bundle bundle = new Bundle();
             bundle.putString("EMAIL",email);
             intent.putExtras(bundle);
