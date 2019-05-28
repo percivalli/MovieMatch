@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             Snackbar.make(textInputLayoutEmail, "Email ou Senha inválidos", Snackbar.LENGTH_SHORT).show();
         }
     }
-
+    //Teste
     /* Método para validar os campos de e-mail e senha e seguir para a tela de perfil
     private void validateAndGoToProfile(){
         String email = textInputLayoutEmail.getEditText().getText().toString();
