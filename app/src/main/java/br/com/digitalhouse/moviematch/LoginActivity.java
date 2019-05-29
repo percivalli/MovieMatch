@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import br.com.digitalhouse.moviematch.Cadastro.Cadastro;
+
 public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout textInputLayoutEmail;
@@ -66,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if(email != null && password != null){
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, Cadastro.class);
             startActivity(intent);
         }else {
             Snackbar.make(textInputLayoutEmail, "Email ou Senha inválidos", Snackbar.LENGTH_SHORT).show();
