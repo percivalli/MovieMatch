@@ -26,7 +26,6 @@ public class Cadastro extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.cadastro_inicial);
 
         editTextName = (TextInputEditText) findViewById(R.id.editTextNome);
@@ -46,23 +45,23 @@ public class Cadastro extends AppCompatActivity {
                 String cidade = editTextCidade.getText().toString();
 
                 if(nome.isEmpty()){
-                    editTextName.setError("Nome não pode ser vazio");
+                    editTextName.setError("Nome não pode ser vazio!");
                     return;
                 }if(idade.isEmpty()){
-                    editTextIdade.setError("Idade não pode ser vazio");
+                    editTextIdade.setError("Idade não pode ser vazio!");
                     return;
                 }if(sexo.isEmpty()){
-                    editTextSexo.setError("Sexo não pode ser vazio");
+                    editTextSexo.setError("Sexo não pode ser vazio!");
                     return;
                 }if(cidade.isEmpty()){
-                    editTextCidade.setError("Cidade não pode ser vazio");
+                    editTextCidade.setError("Cidade não pode ser vazio!");
                     return;
                 }if (nome  != null && idade!= null && sexo != null && cidade != null){
                     Intent intent = new Intent(Cadastro.this, MainActivity.class);
 
                     startActivity(intent);
                 }else {
-                    Snackbar.make(editTextName, "Nome, idade, sexo ou cidade invalidos", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(editTextName, "Nome, idade, sexo ou cidade inválidos!", Snackbar.LENGTH_SHORT).show();
                 }
 
             }
