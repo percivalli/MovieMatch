@@ -10,7 +10,7 @@ import br.com.digitalhouse.moviematch.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //Button btnCriar;
+    private Button btnCriar;
     //Button btnFacebook;
     //Button btnGoogle;
     //Switch btnTermos;
@@ -21,7 +21,13 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        //btnCriar = findViewById(R.id.btnCriar);
+        btnCriar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         //btnFacebook = findViewById(R.id.btnFacebook);
         //btnGoogle = findViewById(R.id.btnGoogle);
         //btnTermos = findViewById(R.id.btnTermos);
