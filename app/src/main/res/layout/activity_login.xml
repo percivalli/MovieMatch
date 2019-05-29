@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#585280"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="br.com.digitalhouse.moviematch.login.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

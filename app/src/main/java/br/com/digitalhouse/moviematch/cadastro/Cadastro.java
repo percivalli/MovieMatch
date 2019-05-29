@@ -1,4 +1,4 @@
-package br.com.digitalhouse.moviematch.Cadastro;
+package br.com.digitalhouse.moviematch.cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
-import java.util.Objects;
-
 import br.com.digitalhouse.moviematch.MainActivity;
-import br.com.digitalhouse.moviematch.R;
 
 
 public class Cadastro extends AppCompatActivity {
@@ -26,14 +22,14 @@ public class Cadastro extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_inicial);
+        setContentView(br.com.digitalhouse.moviematch.R.layout.cadastro_inicial);
 
-        editTextName = (TextInputEditText) findViewById(R.id.editTextNome);
-        editTextIdade = (TextInputEditText) findViewById(R.id.editTextIdade);
-        editTextSexo = (TextInputEditText) findViewById(R.id.editTextSexo);
-        editTextCidade = (TextInputEditText) findViewById(R.id.editTextCidade);
+        editTextName = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextNome);
+        editTextIdade = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextIdade);
+        editTextSexo = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextSexo);
+        editTextCidade = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextCidade);
 
-        btnFinalizar = (Button) findViewById(R.id.btnLogin);
+        btnFinalizar = (Button) findViewById(br.com.digitalhouse.moviematch.R.id.btnLogin);
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override

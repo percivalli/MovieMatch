@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Switch;
 import android.view.View;
 
-import br.com.digitalhouse.moviematch.Cadastro.Cadastro;
+import br.com.digitalhouse.moviematch.cadastro.Cadastro;
 import br.com.digitalhouse.moviematch.R;
 
 public class LoginActivity extends AppCompatActivity {

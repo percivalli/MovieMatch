@@ -1,4 +1,4 @@
-package br.com.digitalhouse.moviematch;
+package br.com.digitalhouse.moviematch.home;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
