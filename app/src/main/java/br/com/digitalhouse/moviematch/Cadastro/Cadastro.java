@@ -26,6 +26,7 @@ public class Cadastro extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.cadastro_inicial);
 
         editTextName = (TextInputEditText) findViewById(R.id.editTextNome);
