@@ -7,9 +7,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import br.com.digitalhouse.moviematch.MainActivity;
-
+import br.com.digitalhouse.moviematch.home.MainActivity;
 
 public class Cadastro extends AppCompatActivity {
 
