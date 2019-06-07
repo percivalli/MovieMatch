@@ -12,4 +12,6 @@
     <string name="login_google">LOGIN GOOGLE</string>
     <string name="login_facebook">LOGIN FACEBOOK</string>
     <string name="criar_conta">CRIAR CONTA</string>
-    </resources>
+    <string name="prosseguir">Prosseguir</string>
+    <string name="mensagemFatoritosBottom">Mínimo 10, máximo 20. Quanto mais escolher, maior a chance de encontrar alguém com gostos parecidos!</string>
+</resources>

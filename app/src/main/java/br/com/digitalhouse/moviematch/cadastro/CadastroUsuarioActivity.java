@@ -7,11 +7,9 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import br.com.digitalhouse.moviematch.home.MainActivity;
 
-import br.com.digitalhouse.moviematch.MainActivity;
-
-
-public class Cadastro extends AppCompatActivity {
+public class CadastroUsuarioActivity extends AppCompatActivity {
 
     private TextInputEditText editTextName;
     private TextInputEditText editTextIdade;
@@ -22,7 +20,7 @@ public class Cadastro extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(br.com.digitalhouse.moviematch.R.layout.cadastro_inicial);
+        setContentView(br.com.digitalhouse.moviematch.R.layout.activity_cadastro_usuario);
 
         editTextName = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextNome);
         editTextIdade = (TextInputEditText) findViewById(br.com.digitalhouse.moviematch.R.id.editTextIdade);
@@ -53,7 +51,7 @@ public class Cadastro extends AppCompatActivity {
                     editTextCidade.setError("Cidade não pode ser vazio!");
                     return;
                 }if (nome  != null && idade!= null && sexo != null && cidade != null){
-                    Intent intent = new Intent(Cadastro.this, MainActivity.class);
+                    Intent intent = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
 
                     startActivity(intent);
                 }else {
