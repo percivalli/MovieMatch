@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".favoritos.MenuFavoritosActivity"></activity>
+        <activity android:name=".favoritos.DetalheFavoritosActivity"></activity>
+        <activity android:name=".favoritos.MenuFavoritosActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".cadastro.Cadastro" />
+        <activity android:name=".cadastro.CadastroUsuarioActivity" />
         <activity android:name=".home.MainActivity" />
-        <activity
-            android:name=".splash.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
