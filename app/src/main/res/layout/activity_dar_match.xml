@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#585280"
+    android:background="#5D5883"
     tools:context=".match.DarMatchActivity">
 
     <android.support.v7.widget.Toolbar
@@ -124,12 +124,23 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="539dp"
         android:layout_marginEnd="182dp"
-        android:layout_marginBottom="61dp"
+        android:layout_marginBottom="74dp"
         android:background="@drawable/buttoncircle"
-        android:src="@drawable/pipoca_coração"
-        android:type="linear"
-        />
+        android:type="linear" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="545dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="84dp"
+        android:src="@drawable/pipoca_coração" />
 
 </RelativeLayout>
