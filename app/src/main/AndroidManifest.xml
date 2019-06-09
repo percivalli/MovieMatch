@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".favoritos.DetalheFavoritosActivity"></activity>
+        <activity android:name=".Perfil.InformacoesPerfil"></activity>
+        <activity android:name=".Perfil.PerfilActivity" />
+        <activity android:name=".Perfil.Main2Activity" />
+        <activity android:name=".favoritos.DetalheFavoritosActivity" />
         <activity android:name=".favoritos.MenuFavoritosActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />

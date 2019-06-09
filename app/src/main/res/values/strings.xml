@@ -14,4 +14,17 @@
     <string name="criar_conta">CRIAR CONTA</string>
     <string name="prosseguir">Prosseguir</string>
     <string name="mensagemFatoritosBottom">Mínimo 10, máximo 20. Quanto mais escolher, maior a chance de encontrar alguém com gostos parecidos!</string>
+    <string name="linguagem_prompt">Cidade</string>
+    <string-array name="cidades">
+        <item> Cidade </item>
+        <item> São Paulo </item>
+        <item> Santo André</item>
+        <item> Guarulhos </item>
+    </string-array>
+    <string-array name="Interesses">
+        <item> Interesse </item>
+        <item> Homens </item>
+        <item> Mulheres </item>
+        <item> Ambos </item>
+    </string-array>
 </resources>

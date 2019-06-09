@@ -6,4 +6,5 @@
     <color name="fundoMovie">#585280</color>
     <color name="fonteMovie">#F7FF00</color>
     <color name="corBotaoSplash">#3C4858</color>
+    <color name="my_spinner_text_color">#F7FF00</color>
 </resources>
