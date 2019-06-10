@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundoMovie"
-    tools:context="br.com.digitalhouse.moviematch.MainActivity">
+    tools:context="br.com.digitalhouse.moviematch.home.MainActivity">
 
     <RelativeLayout
         android:layout_width="334dp"
@@ -23,11 +23,12 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="197dp"
-        android:layout_height="250dp"
+        android:layout_width="140dp"
+        android:layout_height="153dp"
         android:layout_above="@+id/btnCriar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="136dp"
         android:layout_marginBottom="67dp"
         android:background="@drawable/pipoca_dois"
         android:orientation="horizontal"
