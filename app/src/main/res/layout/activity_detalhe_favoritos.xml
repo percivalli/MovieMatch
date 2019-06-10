@@ -14,21 +14,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/layout_subtitle_favoritos"></include>
+
         <ListView
+            android:id="@+id/listViewFilmes"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-
-        </ListView>
+            android:layout_weight="1"
+            android:padding="16dp"
+            tools:listitem="@layout/activity_list_view_detalhe_favoritos"></ListView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mensagemFatoritosBottom"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
             android:gravity="center"
-            android:padding="16dp"/>
+            android:padding="16dp"
+            android:text="@string/mensagemFavoritosBottom"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/buttonDetalheFavoritosNext"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#1E2D3E"
+            android:padding="16dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/prosseguir"
+            android:textAllCaps="false"
+            android:textColor="#DAE30A"
+            android:textSize="24sp" />
+
     </LinearLayout>
 
 </LinearLayout>

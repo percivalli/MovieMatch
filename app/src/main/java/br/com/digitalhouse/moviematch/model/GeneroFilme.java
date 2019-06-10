@@ -10,7 +10,7 @@ public class GeneroFilme implements Parcelable {
 
     //Atributos
     private String nomeGenero;
-    private List<Filme> listaFilmes = new ArrayList<>();
+    private List<Filme> listaFilmes = new ArrayList<Filme>();
 
     //Construtor
     public GeneroFilme() {
@@ -27,9 +27,16 @@ public class GeneroFilme implements Parcelable {
 
     protected GeneroFilme(Parcel in) {
         nomeGenero = in.readString();
+
+        try{
+            listaFilmes = in.readArrayList(GeneroFilme.class.getClassLoader());
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
-    public static final Creator<GeneroFilme> CREATOR = new Creator<GeneroFilme>() {
+    public static final Creator<GeneroFilme> CREATOR = new Parcelable.Creator<GeneroFilme>() {
         @Override
         public GeneroFilme createFromParcel(Parcel in) {
             return new GeneroFilme(in);
@@ -66,5 +73,13 @@ public class GeneroFilme implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nomeGenero);
+
+        try{
+            dest.writeList(listaFilmes);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF5D5883">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#263445"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_alignStart="@+id/toolbar3"
+        android:layout_alignTop="@+id/toolbar3"
+        android:layout_alignEnd="@+id/toolbar3"
+        android:layout_alignBottom="@+id/toolbar3"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="25dp"
+        android:text="DEU MATCH !"
+        android:textColor="#F7FF00"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="62.5dp"
+        android:layout_height="62.5dp"
+        android:layout_alignStart="@+id/toolbar3"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="29dp"
+        android:layout_toStartOf="@+id/toolbar"
+        android:src="@drawable/filme" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/usuario1"
+        android:layout_width="158dp"
+        android:layout_height="156dp"
+        android:layout_below="@+id/toolbar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="220dp"
+        android:src="@drawable/avatar" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/usuario2"
+        android:layout_width="158dp"
+        android:layout_height="156dp"
+        android:layout_below="@+id/toolbar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="36dp"
+        android:src="@drawable/avatar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="62.5dp"
+        android:layout_height="62.5dp"
+        android:layout_alignStart="@+id/toolbar3"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="29dp"
+        android:layout_toStartOf="@+id/toolbar"
+        android:src="@drawable/filme" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="320dp"
+        android:text="Filmes em comum:"
+        android:textColor="#F7FF00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="271dp"
+        android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
+        android:textColor="#ffff"
+        android:textSize="17sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="240dp"
+        android:text="Gêneros em comum:"
+        android:textColor="#F7FF00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="214dp"
+        android:text="Comédia e Ação"
+        android:textColor="#ffff"
+        android:textSize="17sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="71dp"
+        android:src="@drawable/ic_email_black_24dp"/>
+
+    <ImageButton
+        android:id="@+id/btnDarMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="121dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="139dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="61dp"
+        android:background="@drawable/buttoncircle"
+        android:type="linear"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textcolor"
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/toolbar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="17dp"
+        android:text="Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!"
+        android:textColor="#F7FF00"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

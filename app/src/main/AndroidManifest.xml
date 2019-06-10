@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".favoritos.DetalheFavoritosActivity"></activity>
-        <activity android:name=".favoritos.MenuFavoritosActivity" />
+        <activity android:name=".deu_match.DeuMatchActivity"></activity>
+        <activity android:name=".dar_match.DarMatchActivity" />
+        <activity android:name=".favoritos.DetalheFavoritosActivity" />
+        <activity android:name=".favoritos.FavoritosActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />
         <activity android:name=".home.MainActivity" />
