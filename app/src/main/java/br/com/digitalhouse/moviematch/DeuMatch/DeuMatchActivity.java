@@ -1,15 +1,15 @@
-package br.com.digitalhouse.moviematch.match;
+package br.com.digitalhouse.moviematch.DeuMatch;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.com.digitalhouse.moviematch.R;
 
-public class DarMatchActivity extends AppCompatActivity {
+public class DeuMatchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dar_match);
+        setContentView(R.layout.Activity_deu_match);
     }
 }
