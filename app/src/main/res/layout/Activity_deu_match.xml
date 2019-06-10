@@ -169,4 +169,19 @@
         android:type="linear"
         android:visibility="invisible" />
 
+    <TextView
+        android:id="@+id/textcolor"
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/toolbar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="17dp"
+        android:text="Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!"
+        android:textColor="#F7FF00"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
