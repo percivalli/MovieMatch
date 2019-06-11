@@ -14,9 +14,10 @@ import java.util.List;
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.adapters.RecyclerViewFavoritosAdapter;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewFavoritosClickListener;
+import br.com.digitalhouse.moviematch.model.Filme;
 import br.com.digitalhouse.moviematch.model.GeneroFilme;
 
-public class MenuFavoritosActivity extends AppCompatActivity
+public class FavoritosActivity extends AppCompatActivity
         implements RecyclerViewFavoritosClickListener {
 
     private Toolbar toolbar;
@@ -29,7 +30,7 @@ public class MenuFavoritosActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_favoritos);
+        setContentView(R.layout.activity_favoritos);
 
         // Toolbar
         toolbar = findViewById(R.id.toolbar);
@@ -65,17 +66,34 @@ public class MenuFavoritosActivity extends AppCompatActivity
 
         List<GeneroFilme> listaGenerosFilmes = new ArrayList<>();
 
-        listaGenerosFilmes.add(new GeneroFilme("Lançamentos"));
-        listaGenerosFilmes.add(new GeneroFilme("Comédia"));
-        listaGenerosFilmes.add(new GeneroFilme("Terror"));
-        listaGenerosFilmes.add(new GeneroFilme("Ação"));
-        listaGenerosFilmes.add(new GeneroFilme("Romance"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos1"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos2"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos3"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos4"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos5"));
-        listaGenerosFilmes.add(new GeneroFilme("Diversos6"));
+        List<Filme> listaFilmes = new ArrayList<>();
+        List<Filme> listaComedias = new ArrayList<>();
+
+        //Inicializa lista de filmes
+        //Comédia
+        listaComedias.add(new Filme("Avengers: End Game"));
+        listaComedias.add(new Filme("Jonh Wick 3"));
+        listaComedias.add(new Filme("Aladdin"));
+        listaComedias.add(new Filme("Hellboy"));
+        listaComedias.add(new Filme("Rocketman"));
+
+        listaGenerosFilmes.add(new GeneroFilme("Lançamentos", listaComedias));
+
+        //Inicializa lista de filmes
+        listaFilmes.clear();
+        listaFilmes.add(new Filme("Filme 1"));
+        listaFilmes.add(new Filme("Filme 2"));
+        listaFilmes.add(new Filme("Filme 3"));
+        listaFilmes.add(new Filme("Filme 4"));
+        listaFilmes.add(new Filme("Filme 5"));
+        listaFilmes.add(new Filme("Filme 6"));
+
+        listaGenerosFilmes.add(new GeneroFilme("Comédia", listaFilmes));
+        listaGenerosFilmes.add(new GeneroFilme("Terror", listaFilmes));
+        listaGenerosFilmes.add(new GeneroFilme("Ação", listaFilmes));
+        listaGenerosFilmes.add(new GeneroFilme("Romance", listaFilmes));
+        listaGenerosFilmes.add(new GeneroFilme("Diversos1", listaFilmes));
+        listaGenerosFilmes.add(new GeneroFilme("Diversos2", listaFilmes));
 
         return listaGenerosFilmes;
     }

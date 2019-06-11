@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import br.com.digitalhouse.moviematch.R;
-import br.com.digitalhouse.moviematch.favoritos.MenuFavoritosActivity;
+import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
     private void jump () {
         timer.cancel();
 
-        Intent intent = new Intent(SplashActivity.this, MenuFavoritosActivity.class); //LoginActivity.class);
+        Intent intent = new Intent(SplashActivity.this, FavoritosActivity.class);
         startActivity(intent);
         finish();
     }
