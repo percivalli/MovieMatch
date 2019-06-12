@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +15,8 @@ import java.util.List;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.adapters.RecyclerViewFavoritosAdapter;
+import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
+import br.com.digitalhouse.moviematch.dar_match.DarMatchActivity;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewFavoritosClickListener;
 import br.com.digitalhouse.moviematch.model.Filme;
 import br.com.digitalhouse.moviematch.model.GeneroFilme;
@@ -27,6 +31,8 @@ public class FavoritosActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerViewFavoritosAdapter adapter;
 
+    private Button buttonFavoritosNext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +45,9 @@ public class FavoritosActivity extends AppCompatActivity
         toobarTitle = findViewById(R.id.toolbarTitle);
         toobarTitle.setText("ESCOLHA SEUS FAVORITOS");
 
-        // Inicializamos as views
+        // Inicializa as views
         recyclerView = findViewById(R.id.recyclerViewFavoritos);
+        buttonFavoritosNext = findViewById(R.id.buttonFavoritosNext);
 
         // Adiciona o layout manager ao recyclerview
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -48,6 +55,20 @@ public class FavoritosActivity extends AppCompatActivity
         // Adiciona o adapter ao recyclerview
         adapter = new RecyclerViewFavoritosAdapter(getGeneroFilme(), this);
         recyclerView.setAdapter(adapter);
+
+        //Botão Prosseguir
+        buttonFavoritosNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(FavoritosActivity.this,
+                        DarMatchActivity.class);
+
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 

@@ -1,6 +1,7 @@
 package br.com.digitalhouse.moviematch.meus_matchs;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,7 +37,7 @@ public class MeusMatchsActivity extends AppCompatActivity
         //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitle);
-        toobarTitle.setText("ESCOLHA SEUS FAVORITOS");
+        toobarTitle.setText("MEUS MATCHS");
 
         // Inicializamos as views
         recyclerView = findViewById(R.id.recyclerViewMeusMatchs);
@@ -53,6 +54,7 @@ public class MeusMatchsActivity extends AppCompatActivity
     public void onClick(MeusMatchs meusMatchs) {
 
         //Enviar email
+        enviaEmail();
 
     }
 
@@ -71,4 +73,17 @@ public class MeusMatchsActivity extends AppCompatActivity
         return listaMeusMatchs;
     }
 
+    public void enviaEmail() {
+
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.setData(Uri.parse("mailto"));
+        email.setType("message/rfc822");
+        email.putExtra(Intent.EXTRA_EMAIL,
+                new String[]{"aquieucolocomeuemaildecontato"});
+        email.putExtra(Intent.EXTRA_SUBJECT,
+                "Sugestão: ");
+        email.putExtra(Intent.EXTRA_TEXT, "Olá " + "");
+        startActivity(Intent.createChooser(email, "ENVIAR E-MAIL"));
+
+    }
 }
