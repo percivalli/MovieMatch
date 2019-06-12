@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
+import br.com.digitalhouse.moviematch.login.LoginActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -23,7 +26,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         //Incialização das Views
         inicializaViews();
 
@@ -35,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
                 //Permite criar a conta somente se o termo de uso for aceito
                 if (validaTermoUso()) {
                     Intent intent = new Intent(HomeActivity.this,
-                            CadastroUsuarioActivity.class);
+                            LoginActivity.class);
 
                     startActivity(intent);
                 }

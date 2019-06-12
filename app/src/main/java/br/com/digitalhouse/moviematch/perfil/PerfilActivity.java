@@ -2,22 +2,34 @@ package br.com.digitalhouse.moviematch.perfil;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.digitalhouse.moviematch.R;
 
 public class PerfilActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Spinner spinnercidade;
+    private Toolbar toolbar;
+    private TextView toobarTitle;
+
+    private Spinner spinnercidade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+
+        // Toolbar
+        //toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+        toobarTitle = findViewById(R.id.toolbarTitle);
+        toobarTitle.setText("PERFIL");
 
         //Spinner spinner =  findViewById(R.id.spinnercidade);
 
@@ -31,7 +43,7 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
     @Override

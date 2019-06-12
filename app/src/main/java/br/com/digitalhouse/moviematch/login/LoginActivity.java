@@ -4,16 +4,22 @@ import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
 import br.com.digitalhouse.moviematch.home.HomeActivity;
+import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private TextView toobarTitle;
 
     private TextInputLayout textInputLayoutLoginEmail;
     private TextInputLayout textInputLayoutLoginPassword;
@@ -27,6 +33,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        // Toolbar
+        //toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+        toobarTitle = findViewById(R.id.toolbarTitleSimples);
+        toobarTitle.setText("CRIAR SUA CONTA");
+
         //Incialização das Views
         inicializaDadosLogin();
 
@@ -37,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (validaDadosLogin()) {
                     Intent intent = new Intent(LoginActivity.this,
-                            FavoritosActivity.class);
+                            PerfilActivity.class);
 
                     startActivity(intent);
                 }
@@ -75,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                 // --> Incluir chamada da Tela para Login pelo Google
             }
         });
-
     }
 
     public void inicializaDadosLogin() {
@@ -109,5 +122,4 @@ public class LoginActivity extends AppCompatActivity {
         return true;
 
     }
-
 }

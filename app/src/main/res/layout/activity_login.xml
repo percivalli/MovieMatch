@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#585280"
-    android:orientation="vertical"
-    tools:context="br.com.digitalhouse.moviematch.login.HomeActivity">
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar_simples"></include>
 
