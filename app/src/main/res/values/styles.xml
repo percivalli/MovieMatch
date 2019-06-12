@@ -20,5 +20,15 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="Spinner" parent="AppBaseTheme">
+        <item name="android:spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+    </style>
+
 
 </resources>
