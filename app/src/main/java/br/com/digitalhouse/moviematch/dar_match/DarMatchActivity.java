@@ -25,8 +25,8 @@ public class DarMatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dar_match);
 
         // Toolbar
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("VAI DAR MATCH?");

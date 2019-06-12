@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
@@ -43,14 +43,15 @@
 
             <TextView
                 android:id="@+id/toolbarTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:paddingEnd="72dp"
                 android:layout_marginTop="16dp"
                 android:text="SEM TITULO"
                 android:textColor="#F7FF00"
-
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <include layout="@layout/layout_add_profile_medium"></include>

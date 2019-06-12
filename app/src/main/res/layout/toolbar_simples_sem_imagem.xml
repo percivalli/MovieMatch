@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:text="SEM TITULO"
         android:textColor="#F7FF00"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
 </LinearLayout>
 

@@ -23,8 +23,8 @@ public class DeuMatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_deu_match);
 
         // Toolbar
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitleSimplesSemImagem);
         toobarTitle.setText("DEU MATCH!");

@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textViewFavoritosNomeGenero"
+                android:id="@+id/textViewMeusMatchsNome"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:background="@drawable/background_arredondado_topico"
@@ -29,11 +29,9 @@
                 android:paddingStart="80dp"
                 android:text="Nome do genero"
                 android:textColor="#F7FF00"
-
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textViewFavoritosLetraGenero"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@drawable/background_arredondado_letra"
@@ -43,21 +41,19 @@
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/pipoca_coracao"
+                app:civ_border_color="#828FA4" />
+
         </FrameLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButtonFavoritos"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center|right"
-            android:layout_marginStart="16dp"
-            android:backgroundTint="#3C495A"
-            android:clickable="true"
-            android:tint="#ffffff"
-            app:fabSize="auto"
-            app:srcCompat="@drawable/ic_add_black_24dp" />
-
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_email_black_24dp" />
 
     </LinearLayout>
 

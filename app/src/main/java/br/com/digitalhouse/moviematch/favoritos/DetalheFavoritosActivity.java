@@ -38,8 +38,8 @@ public class DetalheFavoritosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalhe_favoritos);
 
         // Toolbar
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitle);
         toobarTitle.setText("ESCOLHA SEUS FAVORITOS");
