@@ -11,6 +11,7 @@ import java.util.TimerTask;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.home.HomeActivity;
+import br.com.digitalhouse.moviematch.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
