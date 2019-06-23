@@ -8,5 +8,5 @@
     <color name="corBotaoSplash">#3C4858</color>
     <color name="corFundoListViewPar">#F9FAFC</color>
     <color name="corFundoListViewImpar">#E5E9F2</color>
-    <color name="my_spinner_text_color">#ffffff</color>
+    <color name="my_spinner_text_color">#FFEB3B</color>
 </resources>

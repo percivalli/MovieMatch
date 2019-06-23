@@ -8,6 +8,10 @@
 
     <include layout="@layout/toolbar"></include>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,27 +52,36 @@
             android:textColor="#ffffff"/>
 
 
-        <Spinner
+        <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spinnerPerfilCidade"
-            style="@style/mySpinnerItemStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E2D3E"
             android:drawSelectorOnTop="true"
             android:entries="@array/arrayCidades"
             android:padding="18dp"
-            android:textColor="#ffffff"/>
+            android:spinnerMode="dialog"
+            android:splitMotionEvents="false"
+            android:textColor="#FFEB3B"
+            android:textDirection="firstStrongRtl"
+            android:touchscreenBlocksFocus="false" />
+
 
         <Spinner
             android:id="@+id/spinnerPerfilInteresse"
-            style="@style/mySpinnerItemStyle"
+            android:theme="@style/mySpinnerItemStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E2D3E"
             android:drawSelectorOnTop="true"
             android:entries="@array/arrayInteresses"
             android:padding="18dp"
-            android:textColor="#ffffff" />
+            android:spinnerMode="dropdown"
+            android:visibility="visible">
+
+
+        </Spinner>
+
 
         <TextView
             android:id="@+id/textViewPerfilMeusMatchs"
@@ -105,5 +118,7 @@
             android:textColor="#DAE30A"
             android:textSize="24sp" />
     </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

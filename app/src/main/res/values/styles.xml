@@ -26,8 +26,8 @@
         <item name="android:spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
     </style>
 
-    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-        <item name="android:textColor">@color/my_spinner_text_color</item>
+    <style name="mySpinnerItemStyle">
+        <item name="android:textColorSecondary">#F7FF00</item>
     </style>
 
 

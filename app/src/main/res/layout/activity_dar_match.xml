@@ -9,6 +9,10 @@
 
     <include layout="@layout/toolbar_simples"></include>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ScrollView>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="220dp"
         android:layout_height="220dp"
@@ -73,7 +77,7 @@
             android:id="@+id/circleImageViewNaoDarMatch"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:padding="16dp"
+            android:padding="25dp"
             android:src="@drawable/sempipoca"
             app:civ_border_color="#828FA4" />
 
@@ -81,7 +85,7 @@
             android:id="@+id/circleImageViewDarMatch"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:padding="16dp"
+            android:padding="25dp"
             android:src="@drawable/pipoca_coracao"
             app:civ_border_color="#828FA4" />
     </LinearLayout>

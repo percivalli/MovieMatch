@@ -51,7 +51,7 @@
                 android:layout_marginTop="16dp"
                 android:text="SEM TITULO"
                 android:textColor="#F7FF00"
-                android:textSize="20sp" />
+                android:textSize="16dp" />
         </LinearLayout>
 
         <include layout="@layout/layout_add_profile_medium"></include>
