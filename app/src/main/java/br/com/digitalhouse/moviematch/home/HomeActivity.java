@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(),
                     "Para prosseguir é necessário aceitar os Termos de Uso",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
             return false;
         }

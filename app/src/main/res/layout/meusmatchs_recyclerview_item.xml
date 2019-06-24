@@ -12,20 +12,22 @@
         android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textViewMeusMatchsNome"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/background_arredondado_topico"
                 android:gravity="left|center"
+                android:lines="1"
                 android:paddingStart="80dp"
                 android:text="Nome do genero"
                 android:textColor="#F7FF00"
@@ -53,6 +55,7 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_marginStart="16dp"
             android:src="@drawable/ic_email_black_24dp" />
 
     </LinearLayout>

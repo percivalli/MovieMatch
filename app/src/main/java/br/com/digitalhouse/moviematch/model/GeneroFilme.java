@@ -82,4 +82,38 @@ public class GeneroFilme implements Parcelable {
         }
 
     }
+
+    //Concatena lista de filmes selecionados para String
+    public String retornaStringFilmesSelecionados() {
+
+        String retornoListaFilmes = "";
+
+            for (Filme itemFime : listaFilmes) {
+                if (itemFime.isFilmeSelecionado()) { //True
+
+                    if (retornoListaFilmes.equals("")) {
+                        retornoListaFilmes = itemFime.getNomeFilme().toString();
+                    } else {
+                        retornoListaFilmes = retornoListaFilmes
+                                + ", " + itemFime.getNomeFilme().toString();
+                    }
+                }
+            }
+
+        return retornoListaFilmes;
+    }
+
+    //Retorna a quantidade de filmes selecionados para String
+    public int retornaQuantidadeFilmesSelecionados() {
+
+        int qtdeFilmesSelecionados = 0;
+
+        for (Filme itemFime : listaFilmes) {
+            if (itemFime.isFilmeSelecionado()) { //True
+                qtdeFilmesSelecionados++;
+            }
+        }
+
+        return qtdeFilmesSelecionados;
+    }
 }

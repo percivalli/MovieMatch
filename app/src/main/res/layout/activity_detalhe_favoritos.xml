@@ -16,13 +16,7 @@
 
         <include layout="@layout/layout_subtitle_favoritos"></include>
 
-        <ListView
-            android:id="@+id/listViewFilmes"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="16dp"
-            tools:listitem="@layout/activity_list_view_detalhe_favoritos"></ListView>
+        <include layout="@layout/content_detalhe_favoritos"></include>
 
         <TextView
             android:layout_width="match_parent"

@@ -28,13 +28,12 @@
                 android:id="@+id/toolbarTitleSimples"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:gravity="center"
                 android:paddingEnd="72dp"
                 android:text="SEM TITULO"
                 android:layout_gravity="center"
                 android:textColor="#F7FF00"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </FrameLayout>
 
