@@ -36,7 +36,7 @@ public class MeusMatchsActivity extends AppCompatActivity
         //toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        toobarTitle = findViewById(R.id.toolbarTitle);
+        toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("MEUS MATCHS");
 
         // Inicializamos as views

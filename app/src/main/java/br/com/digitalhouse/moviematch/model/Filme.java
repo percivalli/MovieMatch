@@ -7,6 +7,7 @@ public class Filme implements Parcelable {
 
     //Atributos
     private String nomeFilme;
+    private boolean filmeSelecionado;
 
     //Construtor
     public Filme(String nomeFilme) {
@@ -15,9 +16,21 @@ public class Filme implements Parcelable {
 
     protected Filme(Parcel in) {
         nomeFilme = in.readString();
+        filmeSelecionado = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<Filme> CREATOR = new Creator<Filme>() {
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nomeFilme);
+        dest.writeByte((byte) (filmeSelecionado ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Filme> CREATOR = new Creator<Filme>() {
         @Override
         public Filme createFromParcel(Parcel in) {
             return new Filme(in);
@@ -38,13 +51,12 @@ public class Filme implements Parcelable {
         this.nomeFilme = nomeFilme;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public boolean isFilmeSelecionado() {
+        return filmeSelecionado;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(nomeFilme);
+    public void setFilmeSelecionado(boolean filmeSelecionado) {
+        this.filmeSelecionado = filmeSelecionado;
     }
+
 }

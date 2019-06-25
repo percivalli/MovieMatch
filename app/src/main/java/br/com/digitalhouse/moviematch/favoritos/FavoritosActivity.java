@@ -1,6 +1,7 @@
 package br.com.digitalhouse.moviematch.favoritos;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,9 @@ public class FavoritosActivity extends AppCompatActivity
     private RecyclerViewFavoritosAdapter adapter;
 
     private Button buttonFavoritosNext;
+    private TextView textViewFavoritosContador;
+
+    private List<GeneroFilme> listaGenerosFilmes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +47,17 @@ public class FavoritosActivity extends AppCompatActivity
         //toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        toobarTitle = findViewById(R.id.toolbarTitle);
+        toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("ESCOLHA SEUS FAVORITOS");
 
         // Inicializa as views
-        recyclerView = findViewById(R.id.recyclerViewFavoritos);
-        buttonFavoritosNext = findViewById(R.id.buttonFavoritosNext);
+        inicializaViews();
 
         // Adiciona o layout manager ao recyclerview
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Adiciona o adapter ao recyclerview
-        adapter = new RecyclerViewFavoritosAdapter(getGeneroFilme(), this);
+        adapter = new RecyclerViewFavoritosAdapter(listaGenerosFilmes, this);
         recyclerView.setAdapter(adapter);
 
         //Botão Prosseguir
@@ -61,14 +65,33 @@ public class FavoritosActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(FavoritosActivity.this,
-                        DarMatchActivity.class);
+                //Somente permitir Dar March se houver pelo menos um filme selecionado
+                if (preparaQuantidadeFilmesSelecionados() > 0) {
+                    Intent intent = new Intent(FavoritosActivity.this,
+                            DarMatchActivity.class);
 
-                startActivity(intent);
+                    //Prepara dados para envio a tela DarMatch
+                    intent.putExtra("FILMES_MARCADOS", preparaStringFilmesSelecionados());
+                    intent.putExtra("GENEROS_MARCADOS", preparaStringGenerosSelecionados());
 
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Selecionar pelo menos 1 filme",
+                            Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        //Atualiza a quantidade de Filmes selecionados na tela
+        textViewFavoritosContador.setText(preparaQuantidadeFilmesSelecionados() + "/20");
 
     }
 
@@ -76,14 +99,14 @@ public class FavoritosActivity extends AppCompatActivity
     @Override
     public void onClick(GeneroFilme generoFilme) {
 
-        Intent intent = new Intent(this, DetalheFavoritosActivity.class);
+        Intent intent = new Intent(FavoritosActivity.this, DetalheFavoritosActivity.class);
         intent.putExtra("GENERO_FILME", generoFilme);
-        startActivity(intent);
+        startActivityForResult(intent, 1);
 
     }
 
-    // Retorna lista de contatos para recycleriew
-    private List<GeneroFilme> getGeneroFilme() {
+    //Incializa Lista de Filmes e Generos ---> Substituir este método pelo resultado da API
+    private List<GeneroFilme> inicializaGeneroFilme() {
 
         List<GeneroFilme> listaGenerosFilmes = new ArrayList<>();
 
@@ -117,6 +140,94 @@ public class FavoritosActivity extends AppCompatActivity
         listaGenerosFilmes.add(new GeneroFilme("Diversos2", listaFilmes));
 
         return listaGenerosFilmes;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Verfica se o requestCode é o mesmo que foi passado
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            GeneroFilme generoFilmeNew = data.getParcelableExtra("GENERO_FILME");
+
+            //Atualiza a seleção dos filmes do usuário
+            if (generoFilmeNew != null) {
+                breakloop:
+                for (GeneroFilme itemGenero : listaGenerosFilmes) {
+                    if (itemGenero.getNomeGenero().equals(generoFilmeNew.getNomeGenero())) {
+                        itemGenero.setListaFilmes(generoFilmeNew.getListaFilmes());
+
+                        break breakloop; //Encerra a busca, pois o genero já foi atualizado
+                    }
+                }
+            }
+        }
+    }
+
+    //Concatena lista de filmes selecionados para String
+    public String preparaStringFilmesSelecionados() {
+
+        String retornoListaFilmes = "";
+
+        for (GeneroFilme itemGenero : listaGenerosFilmes) {
+
+            String retornoFilmes = "";
+
+            retornoFilmes = itemGenero.retornaStringFilmesSelecionados();
+
+            if (!retornoFilmes.equals("")) {
+                if (retornoListaFilmes.equals("")) {
+                    retornoListaFilmes = retornoFilmes;
+                } else {
+                    retornoListaFilmes = retornoListaFilmes + ", " + retornoFilmes;
+                }
+            }
+        }
+
+        return retornoListaFilmes;
+    }
+
+    //Concatena lista de Generos selecionados para String
+    public String preparaStringGenerosSelecionados() {
+
+        String retornoListaGeneros = "";
+
+        for (GeneroFilme itemGenero : listaGenerosFilmes) {
+
+            if (itemGenero.retornaQuantidadeFilmesSelecionados() != 0) {
+                if (retornoListaGeneros.equals("")) {
+                    retornoListaGeneros = itemGenero.getNomeGenero();
+                } else {
+                    retornoListaGeneros = retornoListaGeneros + ", " + itemGenero.getNomeGenero();
+                }
+            }
+        }
+
+        return retornoListaGeneros;
+    }
+
+    //Contagem da quantidade de filmes selecionados
+    public int preparaQuantidadeFilmesSelecionados() {
+
+        int qtdFilmesMarcados = 0;
+
+        for (GeneroFilme itemGenero : listaGenerosFilmes) {
+            qtdFilmesMarcados = qtdFilmesMarcados
+                    + itemGenero.retornaQuantidadeFilmesSelecionados();
+        }
+
+        return qtdFilmesMarcados;
+    }
+
+    // Inicializa as views
+    public void inicializaViews() {
+
+        recyclerView = findViewById(R.id.recyclerViewFavoritos);
+        buttonFavoritosNext = findViewById(R.id.buttonFavoritosNext);
+        textViewFavoritosContador = findViewById(R.id.textViewFavoritosContador);
+
+        listaGenerosFilmes = inicializaGeneroFilme();
+
     }
 
 }

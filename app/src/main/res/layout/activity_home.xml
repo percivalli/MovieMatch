@@ -1,99 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundoMovie"
-    android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="334dp"
-        android:layout_height="67dp"
-        android:layout_gravity="center|center_horizontal"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/logo_texto_01" />
-
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/pipoca" />
-
-    <Button
-        android:id="@+id/btnHomeCriar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:background="@color/corBotaoSplash"
-        android:drawableStart="@drawable/icone_left"
-        android:gravity="center"
-        android:paddingStart="10dp"
-        android:paddingEnd="40dp"
-        android:text="@string/criar_conta"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnHomeFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:background="@color/corBotaoSplash"
-        android:drawableStart="@drawable/facebook_icone_left"
-        android:gravity="center"
-        android:paddingStart="10dp"
-        android:paddingEnd="40dp"
-        android:text="@string/usar_facebook"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnHomeGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:background="@color/corBotaoSplash"
-        android:drawableStart="@drawable/google_icone_left"
-        android:gravity="center"
-        android:paddingStart="10dp"
-        android:paddingEnd="40dp"
-        android:text="@string/usar_google"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="@color/fundoMovie"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.SwitchCompat
-            android:id="@+id/swithHomeTermos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="334dp"
+            android:layout_height="67dp"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/logo_texto_01" />
 
-        <TextView
-            android:id="@+id/textViewHomeTermos"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/pipoca" />
+
+        <Button
+            android:id="@+id/btnHomeCriar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/li_e_concordo_com_os_termos_de_uso"
-            android:textColor="@color/fonteMovie"
-            android:textSize="12sp" />
+            android:layout_gravity="center"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:background="@color/corBotaoSplash"
+            android:drawableStart="@drawable/icone_left"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:text="@string/criar_conta"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHomeFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:background="@color/corBotaoSplash"
+            android:drawableStart="@drawable/facebook_icone_left"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:text="@string/usar_facebook"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHomeGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:background="@color/corBotaoSplash"
+            android:drawableStart="@drawable/google_icone_left"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:text="@string/usar_google"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/swithHomeTermos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewHomeTermos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/li_e_concordo_com_os_termos_de_uso"
+                android:textColor="@color/fonteMovie"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

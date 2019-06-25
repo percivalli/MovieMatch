@@ -1,77 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5D5883"
-    android:orientation="vertical">
-
-    <include layout="@layout/toolbar_simples"></include>
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ScrollView>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/avatar" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:text="Filmes em comum:"
-        android:textColor="#F7FF00"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
-        android:textColor="#ffff"
-        android:textSize="17sp"
-        android:textStyle="normal" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:text="Gêneros em comum:"
-        android:textColor="#F7FF00"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:text="Comédia e Ação"
-        android:textColor="#ffff"
-        android:textSize="17sp"
-        android:textStyle="normal" />
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="#5D5883"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_simples"></include>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchTituloFilmesComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="Filmes em comum:"
+            android:textColor="#F7FF00"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchFilmesComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
+            android:textColor="#ffff"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchTituloGenerosComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="Gêneros em comum:"
+            android:textColor="#F7FF00"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchGenerosComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="Comédia e Ação"
+            android:textColor="#ffff"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleImageViewNaoDarMatch"
@@ -91,15 +92,16 @@
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="Você e fulano combinam tantos %. Será que vai rolar?"
-        android:textColor="#EEFD01"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textViewDarMatchMensagemRodape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="Você e fulano combinam tantos %. Será que vai rolar?"
+            android:textColor="#EEFD01"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

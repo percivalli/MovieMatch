@@ -19,6 +19,14 @@ public class DarMatchActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView toobarTitle;
 
+    //Atributos
+    private TextView textViewDarMatchTituloFilmesComum;
+    private TextView textViewDarMatchFilmesComum;
+    private TextView textViewDarMatchTituloGenerosComum;
+    private TextView textViewDarMatchGenerosComum;
+    ;
+    private TextView textViewDarMatchMensagemRodape;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +36,25 @@ public class DarMatchActivity extends AppCompatActivity {
         //toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        toobarTitle = findViewById(R.id.toolbarTitleSimples);
+        //Inicializa Views
+        inicializaViews();
+
         toobarTitle.setText("VAI DAR MATCH?");
+
+        //Valida se a Intent foi preenchida
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            String textFilmesMarcados = getIntent().getStringExtra("FILMES_MARCADOS");
+            String textGenerosMarcados = getIntent().getStringExtra("GENEROS_MARCADOS");
+
+            //Atualizar os dados na tela
+            if (textFilmesMarcados != null) { //Filmes em comum
+                textViewDarMatchFilmesComum.setText(textFilmesMarcados);
+            }
+
+            if (textGenerosMarcados != null){ //Generos em comum
+                textViewDarMatchGenerosComum.setText(textGenerosMarcados);
+            }
+        }
 
         CircleImageView btnDeuMatch = findViewById(R.id.circleImageViewDarMatch);
 
@@ -52,4 +77,18 @@ public class DarMatchActivity extends AppCompatActivity {
                 alerta.setTitle("Que pena não foi desta Vez");
             }
         });
-    }}
+    }
+
+    //Inicializa Views
+    public void inicializaViews() {
+
+        textViewDarMatchTituloFilmesComum = findViewById(R.id.textViewDarMatchTituloFilmesComum);
+        textViewDarMatchFilmesComum = findViewById(R.id.textViewDarMatchFilmesComum);
+        textViewDarMatchTituloGenerosComum = findViewById(R.id.textViewDarMatchTituloGenerosComum);
+        textViewDarMatchGenerosComum = findViewById(R.id.textViewDarMatchGenerosComum);
+        textViewDarMatchMensagemRodape = findViewById(R.id.textViewDarMatchMensagemRodape);
+        toobarTitle = findViewById(R.id.toolbarTitleSimples);
+
+    }
+
+}
