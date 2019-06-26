@@ -1,16 +1,17 @@
 package br.com.digitalhouse.moviematch.splash;
 
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import br.com.digitalhouse.moviematch.login.LoginActivity;
 import br.com.digitalhouse.moviematch.R;
+import br.com.digitalhouse.moviematch.home.HomeActivity;
+import br.com.digitalhouse.moviematch.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -39,11 +40,12 @@ public class SplashActivity extends AppCompatActivity {
         }, 3000);
     }
 
-        private void jump () {
-            timer.cancel();
-            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+    private void jump () {
+        timer.cancel();
 
+        Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+        startActivity(intent);
+
+        finish();
+    }
+}

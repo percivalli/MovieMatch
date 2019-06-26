@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF5D5883"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_simples_sem_imagem"></include>
+
+    <TextView
+        android:id="@+id/textcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:text="Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/usuario1"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_weight="1"
+                android:src="@drawable/avatar" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/usuario2"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_weight="1"
+                android:src="@drawable/avatar" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="62.5dp"
+            android:layout_height="62.5dp"
+            android:layout_gravity="center|center_horizontal"
+            android:src="@drawable/filme" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Filmes em comum:"
+        android:textColor="#F7FF00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
+        android:textColor="#ffff"
+        android:textSize="17sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Gêneros em comum:"
+        android:textColor="#F7FF00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Comédia e Ação"
+        android:textColor="#ffff"
+        android:textSize="17sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:id="@+id/imageViewEmail"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_email_black_24dp" />
+
+</LinearLayout>

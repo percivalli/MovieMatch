@@ -11,6 +11,23 @@
     <string name="li_e_concordo_com_os_termos_de_uso">Li e concordo com os termos de uso.</string>
     <string name="login_google">LOGIN GOOGLE</string>
     <string name="login_facebook">LOGIN FACEBOOK</string>
+    <string name="prosseguir">Prosseguir</string>
+    <string name="mensagemFavoritosBottom">Mínimo 10, máximo 20. Quanto mais escolher, maior a chance de encontrar alguém com gostos parecidos!</string>
+    <string name="linguagem_prompt">Cidade</string>
+    <string name="usar_google">USAR GOOGLE</string>
+    <string name="usar_facebook">USAR FACEBOOK</string>
+    <string name="login">LOGIN</string>
     <string name="criar_conta">CRIAR CONTA</string>
-    <string name="prosseguir">prosseguir</string>
+    <string-array name="arrayCidades">
+        <item>Cidade</item>
+        <item>São Paulo</item>
+        <item>Santo André</item>
+        <item>Guarulhos</item>
+    </string-array>
+    <string-array name="arrayInteresses">
+        <item>Interesse</item>
+        <item>Homens</item>
+        <item>Mulheres</item>
+        <item>Ambos</item>
+    </string-array>
 </resources>

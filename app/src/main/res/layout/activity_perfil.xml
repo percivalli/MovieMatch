@@ -1,0 +1,121 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#585280"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextPerfilNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1E2D3E"
+                android:hint="@string/nome"
+                android:inputType="text"
+                android:padding="20dp"
+                android:textColor="#5C0505"
+                android:textColorHint="#F7FF00" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextPerfilIdade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1E2D3E"
+                android:hint="Idade"
+                android:inputType="number"
+                android:padding="20dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#F7FF00" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextPerfilSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1E2D3E"
+                android:hint="Sexo"
+                android:inputType="text"
+                android:padding="20dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#F7FF00" />
+
+
+            <Spinner
+                android:id="@+id/spinnerPerfilCidade"
+                style="@style/mySpinnerItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1E2D3E"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/arrayCidades"
+                android:padding="18dp"
+                android:spinnerMode="dialog"
+                android:splitMotionEvents="false"
+                android:textColor="#FFEB3B"
+                android:textDirection="firstStrongRtl"
+                android:touchscreenBlocksFocus="false"/>
+
+            <Spinner
+                android:id="@+id/spinnerPerfilInteresse"
+                style="@style/mySpinnerItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1E2D3E"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/arrayInteresses"
+                android:padding="18dp"
+                android:textColor="#ffffff"
+                android:spinnerMode="dropdown"
+                android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textViewPerfilMeusMatchs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E2D3E"
+            android:drawableRight="@drawable/icon_meu_match"
+            android:padding="20dp"
+            android:text="Meus Matchs"
+            android:textColor="#F7FF00" />
+
+        <TextView
+            android:id="@+id/textViewPerfilFaleConosco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_email_black_24dp"
+            android:padding="16dp"
+            android:text="Fale conosco  "
+            android:textColor="#F7FF00"/>
+
+        <Button
+            android:id="@+id/buttonPerfilNext"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#1E2D3E"
+            android:padding="16dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/prosseguir"
+            android:textAllCaps="false"
+            android:textColor="#DAE30A"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
