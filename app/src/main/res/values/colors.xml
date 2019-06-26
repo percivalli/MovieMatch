@@ -9,4 +9,5 @@
     <color name="corFundoRecyclerViewOn">#F9FAFC</color>
     <color name="corFundoRecyclerViewOff">#E5E9F2</color>
     <color name="my_spinner_text_color">#ffffff</color>
+    <color name="statusBar">#585280</color>
 </resources>
