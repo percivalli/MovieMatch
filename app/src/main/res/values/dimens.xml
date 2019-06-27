@@ -2,4 +2,6 @@
 <resources>
     <dimen name="text_size1">20dp</dimen>
     <dimen name="text_size2">24dp</dimen>
+    <dimen name="margem_simples">16dp</dimen>
+    <dimen name="margem_dupla">32dp</dimen>
 </resources>

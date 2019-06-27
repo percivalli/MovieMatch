@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#5D5883"
+        android:background="@color/fundoMovie"
         android:orientation="vertical">
 
         <include layout="@layout/toolbar_simples"></include>
@@ -29,7 +29,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
             android:text="Filmes em comum:"
-            android:textColor="#F7FF00"
+            android:textColor="@color/corfonteMovie"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
             android:text="Gêneros em comum:"
-            android:textColor="#F7FF00"
+            android:textColor="@color/corfonteMovie"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:text="Você e fulano combinam tantos %. Será que vai rolar?"
-            android:textColor="#EEFD01"
+            android:textColor="@color/corfonteMovie"
             android:textSize="15dp"
             android:textStyle="bold" />
 

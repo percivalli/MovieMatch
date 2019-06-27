@@ -1,88 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#585280"
-    android:orientation="vertical">
-    
-    <ScrollView
+    android:fillViewport="true">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/fundoMovie"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar"></include>
 
 
-    <include layout="@layout/toolbar"></include>
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editTextCadastroNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="@dimen/margem_dupla"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="#976DD0"
+            android:hint="@string/nome"
+            android:inputType="text"
+            android:padding="@dimen/margem_simples"
+            android:textColorHint="@color/corTextoBranco" />
 
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editTextCadastroIdade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="#976DD0"
+            android:hint="@string/idade"
+            android:inputType="number"
+            android:padding="@dimen/margem_simples"
+            android:textColorHint="@color/corTextoBranco" />
 
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editTextCadastroSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="@color/corFundoTextoClaro"
+            android:hint="@string/sexo"
+            android:inputType="text"
+            android:padding="@dimen/margem_simples"
+            android:textColorHint="@color/corTextoBranco" />
 
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/editTextCadastroNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="#976DD0"
-        android:hint="@string/nome"
-        android:inputType="text"
-        android:padding="16dp"
-        android:textColorHint="#ffffff" />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editTextCadastroCidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="@color/corFundoTextoClaro"
+            android:hint="@string/cidade"
+            android:inputType="text"
+            android:padding="@dimen/margem_simples"
+            android:textColorHint="@color/corTextoBranco" />
 
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/editTextCadastroIdade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="#976DD0"
-        android:hint="@string/idade"
-        android:inputType="number"
-        android:padding="16dp"
-        android:textColorHint="#ffffff" />
+        <Button
+            android:id="@+id/btnCadastroFinalizar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margem_dupla"
+            android:background="@color/corfonteMovie"
+            android:padding="@dimen/margem_simples"
+            android:paddingStart="@dimen/margem_dupla"
+            android:paddingEnd="@dimen/margem_dupla"
+            android:text="@string/finalizar"
+            android:textColor="@color/fundoMovie" />
 
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/editTextCadastroSexo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="#976DD0"
-        android:hint="@string/sexo"
-        android:inputType="text"
-        android:padding="16dp"
-        android:textColorHint="#ffffff" />
-
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/editTextCadastroCidade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="#976DD0"
-        android:hint="@string/cidade"
-        android:inputType="text"
-        android:padding="16dp"
-        android:textColorHint="#ffffff" />
-
-    <Button
-        android:id="@+id/btnCadastroFinalizar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        android:background="#F7FF00"
-        android:padding="16dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
-        android:text="@string/finalizar"
-        android:textColor="#585280" />
-
-    </ScrollView>
-
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

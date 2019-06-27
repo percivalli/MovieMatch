@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#585280"
+    android:background="@color/fundoMovie"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar_simples"></include>
@@ -30,6 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/emailpad"
+                    android:lines="1"
                     android:hint="Email"
                     android:paddingStart="16dp" />
             </android.support.design.widget.TextInputLayout>
@@ -48,7 +49,8 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/lockquestion"
                     android:drawableRight="@drawable/eyeoff"
-                    android:drawableTint="#F7FF00"
+                    android:drawableTint="@color/corfonteMovie"
+                    android:lines="1"
                     android:hint="Senha"
                     android:inputType="textPassword"
                     android:paddingStart="16dp"
@@ -96,8 +98,10 @@
                     android:id="@+id/textViewLoginOr"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.7"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:lines="1"
+                    android:layout_weight="1"
                     android:padding="16dp"
                     android:text="Ou"
                     android:textColor="#ffffff" />

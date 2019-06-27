@@ -4,10 +4,13 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#ffffff</color>
     <color name="fundoMovie">#585280</color>
-    <color name="fonteMovie">#F7FF00</color>
+    <color name="corfonteMovie">#F7FF00</color>
     <color name="corBotaoSplash">#3C4858</color>
     <color name="corFundoRecyclerViewOn">#F9FAFC</color>
     <color name="corFundoRecyclerViewOff">#E5E9F2</color>
-    <color name="my_spinner_text_color">#ffffff</color>
-    <color name="statusBar">#585280</color>
+    <color name="corstatusBar">#585280</color>
+    <color name="corTextoBranco">#ffffff</color>
+    <color name="corFundoTextoClaro">#976DD0</color>
 </resources>
+
+

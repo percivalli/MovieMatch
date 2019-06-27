@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/li_e_concordo_com_os_termos_de_uso"
-                android:textColor="@color/fonteMovie"
+                android:textColor="@color/corfonteMovie"
                 android:textSize="12sp" />
 
         </LinearLayout>

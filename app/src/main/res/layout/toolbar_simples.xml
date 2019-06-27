@@ -32,7 +32,7 @@
                 android:paddingEnd="72dp"
                 android:text="SEM TITULO"
                 android:layout_gravity="center"
-                android:textColor="#F7FF00"
+                android:textColor="@color/corfonteMovie"
                 android:textSize="14sp" />
         </LinearLayout>
     </FrameLayout>
