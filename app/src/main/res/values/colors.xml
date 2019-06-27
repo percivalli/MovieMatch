@@ -11,6 +11,7 @@
     <color name="corstatusBar">#585280</color>
     <color name="corTextoBranco">#ffffff</color>
     <color name="corFundoTextoClaro">#976DD0</color>
+    <color name="backgroundperfil">#FF000000</color>
 </resources>
 
 

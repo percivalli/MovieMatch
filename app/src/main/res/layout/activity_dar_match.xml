@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="Filmes em comum:"
+            android:text="@string/filmes_em_comum"
             android:textColor="@color/corfonteMovie"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
+            android:text="@string/avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar"
             android:textColor="#ffff"
             android:textSize="17sp"
             android:textStyle="normal" />
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="Gêneros em comum:"
+            android:text="@string/g_neros_em_comum"
             android:textColor="@color/corfonteMovie"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="Comédia e Ação"
+            android:text="@string/com_dia_e_a_o"
             android:textColor="#ffff"
             android:textSize="17sp"
             android:textStyle="normal" />
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
-            android:text="Você e fulano combinam tantos %. Será que vai rolar?"
+            android:text="@string/voc_e_fulano_combinam_tantos_ser_que_vai_rolar"
             android:textColor="@color/corfonteMovie"
             android:textSize="15dp"
             android:textStyle="bold" />

@@ -24,14 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#976DD0"
-                android:textColorHint="#FFFFFF">
+                android:textColorHint="@color/colorAccent">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/emailpad"
                     android:lines="1"
-                    android:hint="Email"
+                    android:hint="@string/email"
                     android:paddingStart="16dp" />
             </android.support.design.widget.TextInputLayout>
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="#976DD0"
-                android:textColorHint="#FFFFFF"
+                android:textColorHint="@color/colorAccent"
                 app:passwordToggleContentDescription="Mostrar">
 
                 <android.support.design.widget.TextInputEditText
@@ -51,7 +51,7 @@
                     android:drawableRight="@drawable/eyeoff"
                     android:drawableTint="@color/corfonteMovie"
                     android:lines="1"
-                    android:hint="Senha"
+                    android:hint="@string/senha"
                     android:inputType="textPassword"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"></android.support.design.widget.TextInputEditText>
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#3C4858"
+                android:background="@color/corBotaoSplash"
                 android:padding="16dp"
                 android:text="@string/login"
                 android:textAlignment="center"
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#3C4858"
+                android:background="@color/corBotaoSplash"
                 android:padding="16dp"
                 android:text="@string/criar_conta"
                 android:textAlignment="center"
@@ -91,7 +91,7 @@
                     android:layout_height="1dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:background="#ffffff"
+                    android:background="@color/colorAccent"
                     android:focusable="false" />
 
                 <TextView
@@ -103,7 +103,7 @@
                     android:lines="1"
                     android:layout_weight="1"
                     android:padding="16dp"
-                    android:text="Ou"
+                    android:text="@string/ou"
                     android:textColor="#ffffff" />
 
                 <View
@@ -111,7 +111,7 @@
                     android:layout_height="1dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:background="#ffffff"
+                    android:background="@color/colorAccent"
                     android:focusable="false" />
             </LinearLayout>
 
@@ -119,19 +119,19 @@
                 android:id="@+id/btnLoginFacebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#3C4858"
+                android:background="@color/corBotaoSplash"
                 android:drawableLeft="@drawable/facebookbox"
                 android:padding="16dp"
                 android:text="@string/usar_facebook"
                 android:textAlignment="center"
-                android:textColor="#ffff" />
+                android:textColor="@color/colorAccent" />
 
             <Button
                 android:id="@+id/btnLoginGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#3C4858"
+                android:background="@color/corBotaoSplash"
                 android:drawableLeft="@drawable/google"
                 android:padding="16dp"
                 android:text="@string/usar_google"

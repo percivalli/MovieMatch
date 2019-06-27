@@ -36,7 +36,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:backgroundTint="#3C4060"
+            android:backgroundTint="@color/corBotaoSplash"
             android:padding="16dp"
             android:paddingStart="32dp"
             android:paddingEnd="32dp"

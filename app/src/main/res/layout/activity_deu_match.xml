@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
-        android:text="Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!"
-        android:textColor="#ffffff"
+        android:text="@string/voc_e_fulano_agora_podem_conversar_sobre_os_filmes_e_g_neros_que_tem_em_comum"
+        android:textColor="@color/colorAccent"
         android:textSize="15dp"
         android:textStyle="bold" />
 
@@ -60,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Filmes em comum:"
+        android:text="@string/filmes_em_comum"
         android:textColor="@color/corfonteMovie"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:text="Avengers, Endgame, Todo mundo em pânico e Duro de matar..."
-        android:textColor="#ffff"
+        android:text="@string/avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar"
+        android:textColor="@color/colorAccent"
         android:textSize="17sp"
         android:textStyle="normal" />
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="Gêneros em comum:"
+        android:text="@string/g_neros_em_comum"
         android:textColor="@color/corfonteMovie"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -93,8 +93,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:text="Comédia e Ação"
-        android:textColor="#ffff"
+        android:text="@string/com_dia_e_a_o"
+        android:textColor="@color/colorAccent"
         android:textSize="17sp"
         android:textStyle="normal" />
 
