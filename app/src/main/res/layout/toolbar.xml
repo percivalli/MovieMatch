@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#595381">
+        android:background="@color/fundoMovie">
 
         <include layout="@layout/toolbar_simples"></include>
         <include layout="@layout/layout_add_profile_medium"></include>

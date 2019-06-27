@@ -52,6 +52,22 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
         //Inicialização das Views
         inicializaViews();
 
+        //Prepara Spinner de Cidades
+        String[] listaCidades = getResources().getStringArray(R.array.arrayCidades);
+
+        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<String>(
+                this, R.layout.spinner_item, listaCidades);
+
+        spinnerPerfilCidade.setAdapter(arrayAdapterCidade);
+
+        //Prepara Spinner de Interesses
+        String[] listaInteresses = getResources().getStringArray(R.array.arrayInteresses);
+
+        ArrayAdapter<String> arrayAdapterInteresses = new ArrayAdapter<String>(
+                this, R.layout.spinner_item, listaInteresses);
+
+        spinnerPerfilInteresse.setAdapter(arrayAdapterInteresses);
+
         //Opção Meus Matchs
         textViewPerfilMeusMatchs.setOnClickListener(new View.OnClickListener() {
             @Override

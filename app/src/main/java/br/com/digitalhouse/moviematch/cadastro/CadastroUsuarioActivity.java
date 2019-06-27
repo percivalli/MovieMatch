@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
-import br.com.digitalhouse.moviematch.home.HomeActivity;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(br.com.digitalhouse.moviematch.R.layout.activity_cadastro_usuario);
+        setContentView(R.layout.activity_cadastro_usuario);
 
         // Toolbar
         //toolbar = findViewById(R.id.toolbar);

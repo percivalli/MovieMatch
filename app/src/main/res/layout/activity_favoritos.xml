@@ -5,7 +5,7 @@
     android:id="@+id/layoutActivityFavoritos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#595381"
+    android:background="@color/fundoMovie"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar"></include>
@@ -22,7 +22,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="0/20"
-            android:textColor="#DAE30A" />
+            android:textColor="@color/corfonteMovie" />
 
         <include layout="@layout/content_favoritos"></include>
 
@@ -42,7 +42,7 @@
             android:paddingEnd="32dp"
             android:text="@string/prosseguir"
             android:textAllCaps="false"
-            android:textColor="#DAE30A"
+            android:textColor="@color/corfonteMovie"
             android:textSize="24sp" />
 
     </LinearLayout>

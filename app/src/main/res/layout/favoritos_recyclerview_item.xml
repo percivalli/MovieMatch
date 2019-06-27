@@ -33,7 +33,7 @@
                 android:lines="1"
                 android:paddingStart="80dp"
                 android:text="Nome do genero"
-                android:textColor="#F7FF00"
+                android:textColor="@color/corfonteMovie"
                 android:textSize="24sp" />
 
             <TextView
