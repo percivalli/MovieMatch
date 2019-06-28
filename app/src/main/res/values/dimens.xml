@@ -4,4 +4,5 @@
     <dimen name="text_size2">24dp</dimen>
     <dimen name="margem_simples">16dp</dimen>
     <dimen name="margem_dupla">32dp</dimen>
+    <dimen name="text_toolbar">18sp</dimen>
 </resources>

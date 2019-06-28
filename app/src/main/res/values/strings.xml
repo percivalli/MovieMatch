@@ -23,14 +23,9 @@
     <string name="avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar">Avengers, Endgame, Todo mundo em pânico e Duro de matar...</string>
     <string name="g_neros_em_comum">Gêneros em comum:</string>
     <string name="com_dia_e_a_o">Comédia e Ação</string>
-    <string name="email">Email</string>
-    <string name="senha">Senha</string>
     <string name="ou">Ou</string>
     <string name="voc_e_fulano_agora_podem_conversar_sobre_os_filmes_e_g_neros_que_tem_em_comum">Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!</string>
-    <string name="filmes_em_comum">Filmes em comum:</string>
-    <string name="avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar">Avengers, Endgame, Todo mundo em pânico e Duro de matar...</string>
-    <string name="g_neros_em_comum">Gêneros em comum:</string>
-    <string name="com_dia_e_a_o">Comédia e Ação</string>
+    <string name="sem_titulo">SEM TITULO</string>
     <string-array name="arrayCidades">
         <item>Cidade</item>
         <item>São Paulo</item>

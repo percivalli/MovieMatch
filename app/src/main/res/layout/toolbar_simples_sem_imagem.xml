@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="SEM TITULO"
         android:textColor="@color/corfonteMovie"
-        android:textSize="14sp" />
+        android:textSize="@dimen/text_toolbar" />
 
 </LinearLayout>
 

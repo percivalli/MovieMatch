@@ -12,6 +12,7 @@
     <color name="corTextoBranco">#ffffff</color>
     <color name="corFundoTextoClaro">#976DD0</color>
     <color name="backgroundperfil">#FF000000</color>
+    <color name="corBotaoProsseguir">#1E2D3E</color>
 </resources>
 
 

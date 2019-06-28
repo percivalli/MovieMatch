@@ -33,7 +33,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
-        toobarTitle.setText("CADASTRO DO USUÁRIO");
+        toobarTitle.setText("SEU CADASTRO");
 
         //Inicialização das Views
         inicializaViews();
