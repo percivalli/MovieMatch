@@ -60,7 +60,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         //setSupportActionBar(toolbar);
 
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
-        toobarTitle.setText("ESCOLHA SEUS FAVORITOS");
+        toobarTitle.setText("SEUS FAVORITOS");
 
         // Inicializa as views
         recyclerView = findViewById(R.id.recyclerViewDetalheFavoritos);
