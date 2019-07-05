@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:drawSelectorOnTop="true"
-                android:padding="18dp"
+                android:padding="14dp"
                 android:popupTheme="@style/SpinnerTema1"
                 android:spinnerMode="dropdown"
                 android:touchscreenBlocksFocus="true" />
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:drawSelectorOnTop="true"
-                android:padding="18dp"
+                android:padding="14dp"
                 android:popupTheme="@style/SpinnerTema1"
                 android:textColor="@color/corfonteMovie"
                 
