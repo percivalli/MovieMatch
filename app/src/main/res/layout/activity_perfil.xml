@@ -24,10 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
+                android:textSize="18sp"
                 android:hint="@string/nome"
                 android:inputType="text"
                 android:padding="20dp"
-                android:textColor="#5C0505"
+                android:textColor="#FFFFFF"
                 android:textColorHint="@color/corfonteMovie" />
 
             <android.support.design.widget.TextInputEditText
@@ -36,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:hint="Idade"
+                android:textSize="18sp"
                 android:inputType="number"
                 android:padding="20dp"
                 android:textColor="#ffffff"
@@ -47,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:hint="Sexo"
+                android:textSize="18sp"
                 android:inputType="text"
                 android:padding="20dp"
                 android:textColor="#ffffff"
@@ -72,6 +75,7 @@
                 android:padding="18dp"
                 android:popupTheme="@style/SpinnerTema1"
                 android:textColor="@color/corfonteMovie"
+                
                 android:spinnerMode="dropdown"
                 android:visibility="visible" />
 
@@ -83,6 +87,8 @@
                 android:drawableRight="@drawable/icon_meu_match"
                 android:padding="20dp"
                 android:text="Meus Matchs"
+                android:textSize="18sp"
+                android:textColorHint="#ffffff"
                 android:textColor="@color/corfonteMovie" />
 
             <TextView
