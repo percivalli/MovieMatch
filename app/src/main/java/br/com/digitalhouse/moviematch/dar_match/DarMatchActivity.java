@@ -1,7 +1,9 @@
 package br.com.digitalhouse.moviematch.dar_match;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,7 +26,8 @@ public class DarMatchActivity extends AppCompatActivity {
     private TextView textViewDarMatchFilmesComum;
     private TextView textViewDarMatchTituloGenerosComum;
     private TextView textViewDarMatchGenerosComum;
-    ;
+    private CircleImageView  btnNaoDeuMatch;
+
     private TextView textViewDarMatchMensagemRodape;
 
     @Override
@@ -51,7 +54,7 @@ public class DarMatchActivity extends AppCompatActivity {
                 textViewDarMatchFilmesComum.setText(textFilmesMarcados);
             }
 
-            if (textGenerosMarcados != null){ //Generos em comum
+            if (textGenerosMarcados != null) { //Generos em comum
                 textViewDarMatchGenerosComum.setText(textGenerosMarcados);
             }
         }
@@ -68,16 +71,35 @@ public class DarMatchActivity extends AppCompatActivity {
             }
         });
 
-        CircleImageView btnNaoDeuMatch = findViewById(R.id.circleImageViewNaoDarMatch);
+         CircleImageView btnNaoDeuMatch = findViewById(R.id.circleImageViewNaoDarMatch);
 
         btnNaoDeuMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alerta = new AlertDialog.Builder(DarMatchActivity.this);
-                alerta.setTitle("Que pena não foi desta Vez");
+
+                Snackbar.make(v,"Não foi dessa vez",Snackbar.LENGTH_SHORT).show();
             }
         });
+
+        /*btnNaoDeuMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alerta = new AlertDialog.Builder(DarMatchActivity.this);
+                alerta.setTitle("Que pena não foi desta Vez");
+                alerta.setMessage("");
+                alerta.setCancelable(false);
+                alerta.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog alertDialog1 = alerta.create();
+                alertDialog1.show();
+            }
+        });*/
     }
+
 
     //Inicializa Views
     public void inicializaViews() {
@@ -88,6 +110,8 @@ public class DarMatchActivity extends AppCompatActivity {
         textViewDarMatchGenerosComum = findViewById(R.id.textViewDarMatchGenerosComum);
         textViewDarMatchMensagemRodape = findViewById(R.id.textViewDarMatchMensagemRodape);
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
+       btnNaoDeuMatch = findViewById(R.id.circleImageViewNaoDarMatch);
+
 
     }
 
