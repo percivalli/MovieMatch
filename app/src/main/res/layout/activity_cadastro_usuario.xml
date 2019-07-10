@@ -54,18 +54,20 @@
             android:padding="@dimen/margem_simples"
             android:textColorHint="@color/corTextoBranco" />
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextCadastroCidade"
+        <Spinner
+            android:id="@+id/spinnerCadastroCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margem_simples"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/margem_simples"
             android:background="@color/corFundoTextoClaro"
-            android:hint="@string/cidade"
-            android:inputType="text"
-            android:padding="@dimen/margem_simples"
-            android:textColorHint="@color/corTextoBranco" />
+            android:drawSelectorOnTop="true"
+            android:padding="16dp"
+            android:popupTheme="@style/SpinnerTema1"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="true" />
+
 
         <Button
             android:id="@+id/btnCadastroFinalizar"

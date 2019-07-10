@@ -1,17 +1,21 @@
 package br.com.digitalhouse.moviematch.cadastro;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
+import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
 
@@ -21,7 +25,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
     private TextInputEditText editTextCadastroNome;
     private TextInputEditText editTextCadastroIdade;
     private TextInputEditText editTextCadastroSexo;
-    private TextInputEditText editTextCadastroCidade;
+    private Spinner spinnerCadastroCidade;
     private Button btnCadastroFinalizar;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,15 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         //Inicialização das Views
         inicializaViews();
 
+        //Prepara Spinner de Cidades
+        String[] listaCidades = getResources().getStringArray(R.array.arrayCidades);
+
+        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<String>(
+                this, R.layout.spinner_item, listaCidades);
+
+        spinnerCadastroCidade.setAdapter(arrayAdapterCidade);
+
+
         btnCadastroFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +63,21 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
                     startActivity(intent);
                 }
+                if (validadaCadastro()) {
+
+                    //Grava as Preferências do Usuário
+                    SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
+
+//                    preferences.edit().putString("NOME", textNome).commit();
+//                    preferences.edit().putString("IDADE", textIdade).commit();
+//                    preferences.edit().putString("SEXO", textSexo).commit();
+//                    preferences.edit().putString("CIDADE", textCidade).commit();
+
+                    Intent intent = new Intent(CadastroUsuarioActivity.this, FavoritosActivity.class);
+
+                    startActivity(intent);
+                }
+
             }
         });
 
@@ -61,7 +89,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         editTextCadastroNome = findViewById(R.id.editTextCadastroNome);
         editTextCadastroIdade = findViewById(R.id.editTextCadastroIdade);
         editTextCadastroSexo = findViewById(R.id.editTextCadastroSexo);
-        editTextCadastroCidade = findViewById(R.id.editTextCadastroCidade);
+        spinnerCadastroCidade = findViewById(R.id.spinnerCadastroCidade);
         btnCadastroFinalizar = findViewById(R.id.btnCadastroFinalizar);
 
     }
@@ -72,7 +100,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         String textNome = editTextCadastroNome.getText().toString();
         String textIdade = editTextCadastroIdade.getText().toString();
         String textSexo = editTextCadastroSexo.getText().toString();
-        String textCidade = editTextCadastroCidade.getText().toString();
+        String textCidade = spinnerCadastroCidade.getSelectedItem().toString();
 
         //Nome obrigatório
         if (textNome.isEmpty()) {
@@ -92,11 +120,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             return false;
         }
 
-        //Cidade obrigatório
-        if (textCidade.isEmpty()) {
-            editTextCadastroCidade.setError("Favor preencher a Cidade");
-            return false;
-        }
+//        //Cidade obrigatório
+//        if (textCidade.isEmpty()) {
+//            spinnerCadastroCidade.setError("Favor preencher a Cidade");
+//            return false;
+//        }
 
         return true;
     }
