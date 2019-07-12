@@ -65,13 +65,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 }
                 if (validadaCadastro()) {
 
-                    //Grava as Preferências do Usuário
-                    SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
 
-//                    preferences.edit().putString("NOME", textNome).commit();
-//                    preferences.edit().putString("IDADE", textIdade).commit();
-//                    preferences.edit().putString("SEXO", textSexo).commit();
-//                    preferences.edit().putString("CIDADE", textCidade).commit();
 
                     Intent intent = new Intent(CadastroUsuarioActivity.this, FavoritosActivity.class);
 
@@ -101,6 +95,15 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         String textIdade = editTextCadastroIdade.getText().toString();
         String textSexo = editTextCadastroSexo.getText().toString();
         String textCidade = spinnerCadastroCidade.getSelectedItem().toString();
+
+
+        //Grava as Preferências do Usuário
+        SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
+
+                    preferences.edit().putString("NOME", textNome).commit();
+                    preferences.edit().putString("IDADE", textIdade).commit();
+                    preferences.edit().putString("SEXO", textSexo).commit();
+                    preferences.edit().putString("CIDADE", textCidade).commit();
 
         //Nome obrigatório
         if (textNome.isEmpty()) {
