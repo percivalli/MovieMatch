@@ -55,15 +55,16 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
         //Prepara Spinner de Cidades
         String[] listaCidades = getResources().getStringArray(R.array.arrayCidades);
 
-        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<String>(
+        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<>(
                 this, R.layout.spinner_item, listaCidades);
 
         spinnerPerfilCidade.setAdapter(arrayAdapterCidade);
 
+
         //Prepara Spinner de Interesses
         String[] listaInteresses = getResources().getStringArray(R.array.arrayInteresses);
 
-        ArrayAdapter<String> arrayAdapterInteresses = new ArrayAdapter<String>(
+        ArrayAdapter<String> arrayAdapterInteresses = new ArrayAdapter<>(
                 this, R.layout.spinner_item, listaInteresses);
 
         spinnerPerfilInteresse.setAdapter(arrayAdapterInteresses);
@@ -101,13 +102,15 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
         buttonPerfilNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (validaDadosPerfil()) {
 
-                //Chama a tela Favoritos
-                Intent intent = new Intent(PerfilActivity.this,
-                        FavoritosActivity.class);
 
-                startActivity(intent);
+                    //Chama a tela Favoritos
+                    Intent intent = new Intent(PerfilActivity.this,
+                            FavoritosActivity.class);
 
+                    startActivity(intent);
+                }
             }
         });
 

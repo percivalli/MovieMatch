@@ -1,10 +1,12 @@
 package br.com.digitalhouse.moviematch.cadastro;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -19,9 +21,9 @@ import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
 
+
     private Toolbar toolbar;
     private TextView toobarTitle;
-
     private TextInputEditText editTextCadastroNome;
     private TextInputEditText editTextCadastroIdade;
     private TextInputEditText editTextCadastroSexo;
@@ -45,7 +47,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         //Prepara Spinner de Cidades
         String[] listaCidades = getResources().getStringArray(R.array.arrayCidades);
 
-        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<String>(
+        ArrayAdapter<String> arrayAdapterCidade = new ArrayAdapter<>(
                 this, R.layout.spinner_item, listaCidades);
 
         spinnerCadastroCidade.setAdapter(arrayAdapterCidade);
@@ -74,7 +76,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     //Inicialização das Views
@@ -86,6 +87,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         spinnerCadastroCidade = findViewById(R.id.spinnerCadastroCidade);
         btnCadastroFinalizar = findViewById(R.id.btnCadastroFinalizar);
 
+
     }
 
     //Validação dos dados de Cadastro
@@ -96,7 +98,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         String textSexo = editTextCadastroSexo.getText().toString();
         String textCidade = spinnerCadastroCidade.getSelectedItem().toString();
 
-
         //Grava as Preferências do Usuário
         SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
 
@@ -104,6 +105,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     preferences.edit().putString("IDADE", textIdade).commit();
                     preferences.edit().putString("SEXO", textSexo).commit();
                     preferences.edit().putString("CIDADE", textCidade).commit();
+
 
         //Nome obrigatório
         if (textNome.isEmpty()) {
