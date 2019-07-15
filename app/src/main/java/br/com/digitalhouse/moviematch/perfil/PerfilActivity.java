@@ -159,8 +159,6 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
         editTextPerfilNome.setText(preferences.getString("NOME", ""));
         editTextPerfilIdade.setText(preferences.getString("IDADE", ""));
-        editTextPerfilIdade.setText(preferences.getString("SEXO", ""));
-        editTextPerfilIdade.setText(preferences.getString("CIDADE", ""));
 
         //Nome obrigatório
         if (textNome.isEmpty()) {
