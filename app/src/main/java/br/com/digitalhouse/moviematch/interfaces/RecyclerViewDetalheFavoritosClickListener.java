@@ -1,8 +1,6 @@
 package br.com.digitalhouse.moviematch.interfaces;
 
-import java.util.List;
-
-import br.com.digitalhouse.moviematch.model.Filme;
+import br.com.digitalhouse.moviematch.model.filme.Filme;
 
 public interface RecyclerViewDetalheFavoritosClickListener {
 

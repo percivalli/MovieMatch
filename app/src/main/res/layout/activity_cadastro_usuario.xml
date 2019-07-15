@@ -14,8 +14,7 @@
 
         <include layout="@layout/toolbar"></include>
 
-
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextCadastroNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,9 +25,10 @@
             android:hint="@string/nome"
             android:inputType="text"
             android:padding="@dimen/margem_simples"
+            android:textColor="@color/corTextoBranco"
             android:textColorHint="@color/corTextoBranco" />
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextCadastroIdade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,33 +39,36 @@
             android:hint="@string/idade"
             android:inputType="number"
             android:padding="@dimen/margem_simples"
+            android:textColor="@color/corTextoBranco"
             android:textColorHint="@color/corTextoBranco" />
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextCadastroSexo"
+        <Spinner
+            android:id="@+id/spinnerCadastroSexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margem_simples"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/margem_simples"
             android:background="@color/corFundoTextoClaro"
-            android:hint="@string/sexo"
-            android:inputType="text"
-            android:padding="@dimen/margem_simples"
-            android:textColorHint="@color/corTextoBranco" />
+            android:drawSelectorOnTop="true"
+            android:padding="8dp"
+            android:popupTheme="@style/SpinnerCadastro"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="true" />
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextCadastroCidade"
+        <Spinner
+            android:id="@+id/spinnerCadastroCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margem_simples"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/margem_simples"
             android:background="@color/corFundoTextoClaro"
-            android:hint="@string/cidade"
-            android:inputType="text"
-            android:padding="@dimen/margem_simples"
-            android:textColorHint="@color/corTextoBranco" />
+            android:drawSelectorOnTop="true"
+            android:padding="8dp"
+            android:popupTheme="@style/SpinnerCadastro"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="true" />
 
         <Button
             android:id="@+id/btnCadastroFinalizar"

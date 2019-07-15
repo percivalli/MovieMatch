@@ -1,4 +1,4 @@
-package br.com.digitalhouse.moviematch.model;
+package br.com.digitalhouse.moviematch.model.meus_matchs;
 
 public class MeusMatchs {
 
