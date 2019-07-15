@@ -1,37 +1,36 @@
 package br.com.digitalhouse.moviematch.adapters;
 
-import android.app.Activity;
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewDetalheFavoritosClickListener;
-import br.com.digitalhouse.moviematch.model.Filme;
+import br.com.digitalhouse.moviematch.model.filme.Filme;
 
 public class RecyclerViewDetalheFavoritosAdapter
         extends RecyclerView.Adapter<RecyclerViewDetalheFavoritosAdapter.ViewHolder> {
 
     //Atributos
-    private List<Filme> listaFilmes;
+    private List<Filme> filmes;
     private RecyclerViewDetalheFavoritosClickListener listener;
 
     //Construtor
     public RecyclerViewDetalheFavoritosAdapter() {
     }
 
-    public RecyclerViewDetalheFavoritosAdapter(List<Filme> listaFilmes, RecyclerViewDetalheFavoritosClickListener listener) {
-        this.listaFilmes = listaFilmes;
+    public RecyclerViewDetalheFavoritosAdapter(
+            List<Filme> filmes, RecyclerViewDetalheFavoritosClickListener listener) {
+        this.filmes = filmes;
         this.listener = listener;
     }
 
@@ -40,9 +39,7 @@ public class RecyclerViewDetalheFavoritosAdapter
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(
-                R.layout.detalhe_favoritos_recyclerview_item,
-                viewGroup,
-                false);
+                R.layout.detalhe_favoritos_recyclerview_item, viewGroup, false);
 
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
@@ -52,7 +49,7 @@ public class RecyclerViewDetalheFavoritosAdapter
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int position) {
 
-        final Filme filme = listaFilmes.get(position);
+        final Filme filme = filmes.get(position);
 
         //Cor de fundo zebrada
         if (position % 2 == 0) {
@@ -76,7 +73,13 @@ public class RecyclerViewDetalheFavoritosAdapter
 
     @Override
     public int getItemCount() {
-        return listaFilmes.size();
+        return filmes.size();
+    }
+
+    //Atualiza a lista de filmes
+    public void update(List<Filme> filmesList) {
+        this.filmes = filmesList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -99,10 +102,10 @@ public class RecyclerViewDetalheFavoritosAdapter
                     itemView.findViewById(R.id.floatingActionButtonFavoritos);
         }
 
-        //Atribuição das views os valores da variável GeneroFilme
+        //Atribuição das views os valores da variável Filme
         public void setConteudoNaTela(Filme filme) {
 
-            textViewNomeFilme.setText(filme.getNomeFilme());
+            textViewNomeFilme.setText(filme.getTitle());
 
             if (filme.isFilmeSelecionado() == true) {
                 imageViewDetalheFavoritosCheckItem.setVisibility(View.VISIBLE);
@@ -112,6 +115,4 @@ public class RecyclerViewDetalheFavoritosAdapter
 
         }
     }
-
 }
-

@@ -2,16 +2,16 @@ package br.com.digitalhouse.moviematch.dar_match;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.deu_match.DeuMatchActivity;
-import br.com.digitalhouse.moviematch.favoritos.DetalheFavoritosActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DarMatchActivity extends AppCompatActivity {
@@ -24,7 +24,9 @@ public class DarMatchActivity extends AppCompatActivity {
     private TextView textViewDarMatchFilmesComum;
     private TextView textViewDarMatchTituloGenerosComum;
     private TextView textViewDarMatchGenerosComum;
-    ;
+
+    private CircleImageView btnNaoDeuMatch;
+
     private TextView textViewDarMatchMensagemRodape;
 
     @Override
@@ -51,7 +53,7 @@ public class DarMatchActivity extends AppCompatActivity {
                 textViewDarMatchFilmesComum.setText(textFilmesMarcados);
             }
 
-            if (textGenerosMarcados != null){ //Generos em comum
+            if (textGenerosMarcados != null) { //Generos em comum
                 textViewDarMatchGenerosComum.setText(textGenerosMarcados);
             }
         }
@@ -73,8 +75,12 @@ public class DarMatchActivity extends AppCompatActivity {
         btnNaoDeuMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alerta = new AlertDialog.Builder(DarMatchActivity.this);
-                alerta.setTitle("Que pena não foi desta Vez");
+                /*
+                Toast.makeText(getApplicationContext(),
+                        "Que pena não foi desta vez!",
+                        Toast.LENGTH_SHORT).show();
+                */
+                Snackbar.make(v, "Que pena não foi dessa vez!", Snackbar.LENGTH_SHORT).show();
             }
         });
     }
@@ -90,5 +96,4 @@ public class DarMatchActivity extends AppCompatActivity {
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
 
     }
-
 }

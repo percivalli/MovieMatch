@@ -34,4 +34,13 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="SpinnerCadastro" parent="AppBaseTheme">
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">@color/corFundoTextoClaro</item>
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:textColorSecondary">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

@@ -1,10 +1,9 @@
 package br.com.digitalhouse.moviematch.perfil;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,13 +13,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import br.com.digitalhouse.moviematch.R;
-import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
-import br.com.digitalhouse.moviematch.login.LoginActivity;
 import br.com.digitalhouse.moviematch.meus_matchs.MeusMatchsActivity;
 
 public class PerfilActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -30,8 +27,9 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
     private EditText editTextPerfilNome;
     private EditText editTextPerfilIdade;
-    private EditText editTextPerfilSexo;
+    //private EditText editTextPerfilSexo;
     private Spinner spinnerPerfilCidade;
+    private Spinner spinnerPerfilSexo;
     private Spinner spinnerPerfilInteresse;
     private TextView textViewPerfilMeusMatchs;
     private TextView textViewPerfilFaleConosco;
@@ -51,6 +49,14 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
         //Inicialização das Views
         inicializaViews();
+
+        //Prepara Spinner de Sexo
+        String[] listaSexo = getResources().getStringArray(R.array.arraySexo);
+
+        ArrayAdapter<String> arrayAdapterSexo = new ArrayAdapter<String>(
+                this, R.layout.spinner_item, listaSexo);
+
+        spinnerPerfilSexo.setAdapter(arrayAdapterSexo);
 
         //Prepara Spinner de Cidades
         String[] listaCidades = getResources().getStringArray(R.array.arrayCidades);
@@ -110,8 +116,6 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
             }
         });
-
-
     }
 
     @Override
@@ -130,7 +134,8 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
         editTextPerfilNome = findViewById(R.id.editTextPerfilNome);
         editTextPerfilIdade = findViewById(R.id.editTextPerfilIdade);
-        editTextPerfilSexo = findViewById(R.id.editTextPerfilSexo);
+        //editTextPerfilSexo = findViewById(R.id.editTextPerfilSexo);
+        spinnerPerfilSexo = findViewById(R.id.spinnerPerfilSexo);
         spinnerPerfilCidade = findViewById(R.id.spinnerPerfilCidade);
         spinnerPerfilInteresse = findViewById(R.id.spinnerPerfilInteresse);
         textViewPerfilMeusMatchs = findViewById(R.id.textViewPerfilMeusMatchs);
@@ -143,9 +148,17 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
 
         String textNome = editTextPerfilNome.getText().toString();
         String textIdade = editTextPerfilIdade.getText().toString();
-        String textSexo = editTextPerfilSexo.getText().toString();
+        //String textSexo = editTextPerfilSexo.getText().toString();
+        String textSexo = spinnerPerfilSexo.getSelectedItem().toString();
         String textCidade = spinnerPerfilCidade.getSelectedItem().toString();
         String textInteresse = spinnerPerfilInteresse.getSelectedItem().toString();
+
+        //Recuperar as preferencias do usuário
+        SharedPreferences preferences = getSharedPreferences(
+                "APP", MODE_PRIVATE);
+
+        editTextPerfilNome.setText(preferences.getString("NOME", ""));
+        editTextPerfilIdade.setText(preferences.getString("IDADE", ""));
 
         //Nome obrigatório
         if (textNome.isEmpty()) {
@@ -159,6 +172,7 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
             return false;
         }
 
+        /*
         //Sexo obrigatório
         if (textSexo.isEmpty()) {
             editTextPerfilSexo.setError("Favor preencher o Sexo");
@@ -166,19 +180,19 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
         }
 
         //Cidade obrigatório
-        //if (textCidade.isEmpty()) {
-//            spinnerPerfilCidade.setError("Favor preencher a Cidade");
-//            return false;
-        //      }
+        if (textCidade.isEmpty()) {
+           spinnerPerfilCidade.setError("Favor preencher a Cidade");
+           return false;
+        }
 
         //Interesse obrigatório
-        //    if (textInteresse.isEmpty()) {
-        //      spinnerPerfilInteresse.setError("Favor preencher o Interesse");
-        //    return false;
-        //}
+        if (textInteresse.isEmpty()) {
+           spinnerPerfilInteresse.setError("Favor preencher o Interesse");
+            return false;
+        }
+        */
 
         return true;
-
     }
 
     public void enviaEmail() {
@@ -192,8 +206,5 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
                 "Sugestão: ");
         email.putExtra(Intent.EXTRA_TEXT, "Olá " + "");
         startActivity(Intent.createChooser(email, "ENVIAR E-MAIL"));
-
     }
-
-
 }
