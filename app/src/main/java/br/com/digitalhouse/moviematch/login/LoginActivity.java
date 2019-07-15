@@ -1,6 +1,7 @@
 package br.com.digitalhouse.moviematch.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -100,6 +101,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginCriarConta = findViewById(R.id.btnLoginCriarConta);
         btnLoginFacebook = findViewById(R.id.btnLoginFacebook);
         btnLoginGoogle = findViewById(R.id.btnLoginGoogle);
+
     }
 
     public boolean validaDadosLogin(){
@@ -119,7 +121,21 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
+        if(!(textEmail.isEmpty()) && (textPassword.isEmpty())){
+
+            final SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
+
+            textInputLayoutLoginEmail.getEditText().setText(preferences.getString(
+                    "EMAIL",""));
+            textInputLayoutLoginPassword.getEditText().setText(preferences.getString(
+                    "SENHA",""));
+
+        }
+
         return true;
 
     }
+
+
+
 }
