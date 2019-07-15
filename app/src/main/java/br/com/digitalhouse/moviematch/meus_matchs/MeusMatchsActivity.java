@@ -2,12 +2,13 @@ package br.com.digitalhouse.moviematch.meus_matchs;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.adapters.RecyclerViewMeusMatchsAdapter;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewMeusMatchsClickListener;
-import br.com.digitalhouse.moviematch.model.MeusMatchs;
+import br.com.digitalhouse.moviematch.model.meus_matchs.MeusMatchs;
 
 public class MeusMatchsActivity extends AppCompatActivity
         implements RecyclerViewMeusMatchsClickListener {

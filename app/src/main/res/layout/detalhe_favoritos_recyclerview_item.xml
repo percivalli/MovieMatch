@@ -21,11 +21,11 @@
 
     <ImageView
         android:id="@+id/imageViewDetalheFavoritosCheckItem"
-        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_check_blue_24dp"
         android:layout_gravity="center"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:src="@drawable/ic_check_blue_24dp"
+        android:visibility="invisible" />
 
 </LinearLayout>

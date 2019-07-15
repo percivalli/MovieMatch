@@ -1,20 +1,20 @@
 package br.com.digitalhouse.moviematch.login;
 
 import android.content.Intent;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.textfield.TextInputLayout;
+
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
-import br.com.digitalhouse.moviematch.home.HomeActivity;
-import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         // Toolbar
         //toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -50,12 +49,28 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (validaDadosLogin()) {
+
+                    /*
+                    //Grava preferências do Usuário
+                    SharedPreferences preferences = getSharedPreferences(
+                            "APP", MODE_PRIVATE);
+
+                    textInputLayoutLoginEmail.getEditText().setText(preferences.getString(
+                            "EMAIL", ""));
+
+                    textInputLayoutLoginPassword.getEditText().setText(preferences.getString(
+                            "SENHA", ""));
+                    */
+
+                    //Chama a tela de Perfil
+                    //Intent intent = new Intent(LoginActivity.this,
+                    //        PerfilActivity.class);
+
                     Intent intent = new Intent(LoginActivity.this,
-                            PerfilActivity.class);
+                            FavoritosActivity.class);
 
                     startActivity(intent);
                 }
-
             }
         });
 
@@ -102,10 +117,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginGoogle = findViewById(R.id.btnLoginGoogle);
     }
 
-    public boolean validaDadosLogin(){
+    public boolean validaDadosLogin() {
 
         String textEmail = textInputLayoutLoginEmail.getEditText().getText().toString();
         String textPassword = textInputLayoutLoginPassword.getEditText().getText().toString();
+
+        //minimo de caracteres permitidos para o cadastro de senha
+        int minimalPassLen = 6;
+
+        //Inicializa o set Error
+        textInputLayoutLoginEmail.setError("");
+        textInputLayoutLoginPassword.setError("");
 
         //Email Obrigatório
         if (textEmail.isEmpty()) {
@@ -119,7 +141,21 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
-        return true;
+        if (textPassword.length() < minimalPassLen) {
+            textInputLayoutLoginPassword.setError("Digite uma senha com 6 ou mais caracteres");
+            return false;
+        }
 
+        if (!(textEmail.isEmpty()) && !(textPassword.isEmpty())) {
+
+            //Grava as Preferencias do Usuario
+            SharedPreferences preferences = getSharedPreferences("APP", MODE_PRIVATE);
+
+            preferences.edit().putString("EMAIL", textEmail).commit();
+            preferences.edit().putString("SENHA", textPassword).commit();
+
+            return true;
+        }
+        return true;
     }
 }

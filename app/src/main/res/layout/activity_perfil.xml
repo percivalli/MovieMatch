@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:padding="32dp">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPerfilNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,10 +27,11 @@
                 android:hint="@string/nome"
                 android:inputType="text"
                 android:padding="20dp"
-                android:textColor="#5C0505"
-                android:textColorHint="@color/corfonteMovie" />
+                android:textColor="#F7FF00"
+                android:textColorHint="@color/corfonteMovie"
+                android:textSize="18sp" />
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPerfilIdade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,19 +39,20 @@
                 android:hint="Idade"
                 android:inputType="number"
                 android:padding="20dp"
-                android:textColor="#ffffff"
-                android:textColorHint="@color/corfonteMovie" />
+                android:textColor="#F7FF00"
+                android:textColorHint="@color/corfonteMovie"
+                android:textSize="18sp" />
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/editTextPerfilSexo"
+            <Spinner
+                android:id="@+id/spinnerPerfilSexo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
-                android:hint="Sexo"
-                android:inputType="text"
-                android:padding="20dp"
-                android:textColor="#ffffff"
-                android:textColorHint="@color/corfonteMovie" />
+                android:drawSelectorOnTop="true"
+                android:padding="14dp"
+                android:popupTheme="@style/SpinnerTema1"
+                android:spinnerMode="dropdown"
+                android:touchscreenBlocksFocus="true" />
 
             <Spinner
                 android:id="@+id/spinnerPerfilCidade"
@@ -58,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:drawSelectorOnTop="true"
-                android:padding="18dp"
+                android:padding="14dp"
                 android:popupTheme="@style/SpinnerTema1"
                 android:spinnerMode="dropdown"
                 android:touchscreenBlocksFocus="true" />
@@ -69,10 +71,10 @@
                 android:layout_height="wrap_content"
                 android:background="#1E2D3E"
                 android:drawSelectorOnTop="true"
-                android:padding="18dp"
+                android:padding="14dp"
                 android:popupTheme="@style/SpinnerTema1"
-                android:textColor="@color/corfonteMovie"
                 android:spinnerMode="dropdown"
+                android:textColor="@color/corfonteMovie"
                 android:visibility="visible" />
 
             <TextView
@@ -83,7 +85,9 @@
                 android:drawableRight="@drawable/icon_meu_match"
                 android:padding="20dp"
                 android:text="Meus Matchs"
-                android:textColor="@color/corfonteMovie" />
+                android:textColor="@color/corfonteMovie"
+                android:textColorHint="#ffffff"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textViewPerfilFaleConosco"
