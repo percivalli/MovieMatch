@@ -71,13 +71,12 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     //        FavoritosActivity.class);
 
                     Intent intent = new Intent(CadastroUsuarioActivity.this,
-                            FavoritosActivity.class);
+                            PerfilActivity.class);
 
                     startActivity(intent);
                 }
             }
         });
-
     }
 
     //Inicialização das Views
@@ -146,5 +145,4 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
         return true;
     }
-
 }
