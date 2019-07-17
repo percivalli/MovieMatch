@@ -9,8 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ import br.com.digitalhouse.moviematch.interfaces.RecyclerViewDetalheFavoritosCli
 import br.com.digitalhouse.moviematch.model.filme.Filme;
 import br.com.digitalhouse.moviematch.model.genero.Genero;
 import br.com.digitalhouse.moviematch.model.usuario.Usuario;
+import br.com.digitalhouse.moviematch.viewmodel.FilmeViewModel;
 
 public class DetalheFavoritosActivity extends AppCompatActivity
         implements RecyclerViewDetalheFavoritosClickListener {
@@ -54,6 +58,11 @@ public class DetalheFavoritosActivity extends AppCompatActivity
     //Declaração da interface com a tabela Usuario para controlar os Generos e Filmes que o usuario
     //escolheu
     private UsuarioDAO usuarioDAO;
+
+    //****************************** View Model ******************************************
+    //Declaração do ViewModel
+    private FilmeViewModel viewModel;
+    //****************************** View Model ******************************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,16 +102,41 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         adapter = new RecyclerViewDetalheFavoritosAdapter(listaFilmes, this);
         recyclerView.setAdapter(adapter);
 
+        //****************************** View Model ******************************************
+        // Inicializa ViewModel
+        viewModel = ViewModelProviders.of(this).get(FilmeViewModel.class);
+        viewModel.searchFilme();
+
+        // Adicionar os observables
+        viewModel.getFilmeLiveData().observe(this, generos -> adapter.update(listaFilmes));
+
+        /*
+        //Observable Loading
+        viewModel.getLoadingLiveData().observe(this, isLoading -> {
+
+            if (isLoading) {
+                progressBar.setVisibility(View.VISIBLE);
+            } else {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+        */
+
+        //Observable Error
+        viewModel.getErrorLiveData().observe(this, throwable -> {
+            Snackbar.make(recyclerView, throwable.getMessage(), Snackbar.LENGTH_SHORT).show();
+
+        });
+        //****************************** View Model ******************************************
+
         //Permite comunicação/acesso aos registros da tabela Filme
         filmeDAO = Database.getDatabase(this).filmeDAO();
 
         //Permite comunicação/acesso aos registros da tabela UsuarioFilme
         usuarioDAO = Database.getDatabase(this).usuarioDAO();
 
-        //*****************************************************************************************
-        //insere e busca dados nas tabelas de filmes até recuperar da API
-        inserirDadosTemporarios();
-        //*****************************************************************************************
+        //Busca Lista de Filmes
+        recuperaListaFilmes();
 
         buttonProsseguir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,10 +173,11 @@ public class DetalheFavoritosActivity extends AppCompatActivity
     }
 
 
-    private void inserirDadosTemporarios() {
+    private void recuperaListaFilmes() {
 
-        new Thread(() -> {
+        // new Thread(() -> {
 
+            /*
             //Inicializa lista de generos:
             List<Long> generoLancamento = new ArrayList<>();
             List<Long> generoComedia = new ArrayList<>();
@@ -205,11 +240,12 @@ public class DetalheFavoritosActivity extends AppCompatActivity
 
             //Grava na tabela de genero a lista de filmes
             filmeDAO.insertAll(listaFilmes);
+            */
 
-            //Recupera todos filmes por generos
-            buscarTodosOsFilmesPorGenero(genero.getId());
+        //Recupera todos filmes por generos
+        buscarTodosOsFilmesPorGenero(genero.getId());
 
-        }).start();
+        //  }).start();
 
     }
 

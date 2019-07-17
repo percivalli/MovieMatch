@@ -76,6 +76,14 @@ public class RecyclerViewDetalheFavoritosAdapter
         return filmes.size();
     }
 
+    /*
+    //Limpa os generos
+    public void clear(){
+        this.filmes.clear();
+        notifyDataSetChanged();
+    }
+    */
+
     //Atualiza a lista de filmes
     public void update(List<Filme> filmesList) {
         this.filmes = filmesList;
