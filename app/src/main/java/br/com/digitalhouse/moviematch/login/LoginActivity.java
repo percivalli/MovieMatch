@@ -50,18 +50,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (validaDadosLogin()) {
 
-                    /*
-                    //Grava preferências do Usuário
-                    SharedPreferences preferences = getSharedPreferences(
-                            "APP", MODE_PRIVATE);
-
-                    textInputLayoutLoginEmail.getEditText().setText(preferences.getString(
-                            "EMAIL", ""));
-
-                    textInputLayoutLoginPassword.getEditText().setText(preferences.getString(
-                            "SENHA", ""));
-                    */
-
                     //Chama a tela de Perfil
                     //Intent intent = new Intent(LoginActivity.this,
                     //        PerfilActivity.class);

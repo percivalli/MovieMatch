@@ -14,8 +14,8 @@ import br.com.digitalhouse.moviematch.model.genero.Genero;
 import br.com.digitalhouse.moviematch.model.usuario.Usuario;
 
 @androidx.room.Database(
-        entities = {Genero.class, Filme.class, Usuario.class}, version = 16, exportSchema = false)
-@TypeConverters(Converters.class)  //Adiciona os conversores
+        entities = {Genero.class, Filme.class, Usuario.class}, version = 17, exportSchema = false)
+@TypeConverters(Converters.class)
 
 public abstract class Database extends RoomDatabase {
 

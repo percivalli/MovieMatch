@@ -31,6 +31,8 @@ public class GeneroRepository {
 
         Database database = Database.getDatabase(context);
         GeneroDAO generoDAO = database.generoDAO();
+
+        generoDAO.deleteAll();
         generoDAO.insertAll(generos);
     }
 

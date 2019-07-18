@@ -105,10 +105,10 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         //****************************** View Model ******************************************
         // Inicializa ViewModel
         viewModel = ViewModelProviders.of(this).get(FilmeViewModel.class);
-        viewModel.searchFilme();
+        viewModel.searchFilme(genero.getId());
 
         // Adicionar os observables
-        viewModel.getFilmeLiveData().observe(this, generos -> adapter.update(listaFilmes));
+        viewModel.getFilmeLiveData().observe(this, filmes -> adapter.update(filmes));
 
         /*
         //Observable Loading
@@ -135,8 +135,8 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         //Permite comunicação/acesso aos registros da tabela UsuarioFilme
         usuarioDAO = Database.getDatabase(this).usuarioDAO();
 
-        //Busca Lista de Filmes
-        recuperaListaFilmes();
+        //Busca Lista de Filmes por Id do Gênero
+        buscarTodosOsFilmesPorGenero(genero.getId());
 
         buttonProsseguir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,83 +172,6 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         });
     }
 
-
-    private void recuperaListaFilmes() {
-
-        // new Thread(() -> {
-
-            /*
-            //Inicializa lista de generos:
-            List<Long> generoLancamento = new ArrayList<>();
-            List<Long> generoComedia = new ArrayList<>();
-            List<Long> generoTerror = new ArrayList<>();
-            List<Long> generoAcao = new ArrayList<>();
-            List<Long> generoRomance = new ArrayList<>();
-
-            List<Long> generoMisto = new ArrayList<>();
-
-            generoLancamento.add(new Long(10L));
-            generoComedia.add(new Long(20L));
-            generoTerror.add(new Long(30L));
-            generoAcao.add(new Long(40L));
-            generoRomance.add(new Long(100L));
-
-            generoMisto.add(new Long(10L));
-            generoMisto.add(new Long(100L));
-
-            //Inicializa lista de filmes:
-            List<Filme> listaFilmes = new ArrayList<>();
-
-            //Inicializa lista de filmes: Lançamentos
-            listaFilmes.add(new Filme(generoMisto, 1L, "Nasce Uma Estrela"));
-            listaFilmes.add(new Filme(generoLancamento, 2L, "Liga Da Justiça"));
-            listaFilmes.add(new Filme(generoLancamento, 3L, "Jonh Wick 3"));
-            listaFilmes.add(new Filme(generoLancamento, 4L, "Aladdin"));
-            listaFilmes.add(new Filme(generoLancamento, 5L, "Hellboy"));
-            listaFilmes.add(new Filme(generoLancamento, 6L, "Rocketman"));
-
-            //Inicializa lista de filmes: Comédia
-            listaFilmes.add(new Filme(generoComedia, 7L, "Todo Mundo em Pânico"));
-            listaFilmes.add(new Filme(generoComedia, 8L, "Corra Que A Polícia Vem Aí"));
-            listaFilmes.add(new Filme(generoComedia, 9L, "O Virgem de 40 Anos "));
-            listaFilmes.add(new Filme(generoComedia, 10L, "As Branquelas"));
-            listaFilmes.add(new Filme(generoComedia, 11L, "Borat"));
-
-            //Inicializa lista de filmes: Terror
-            listaFilmes.add(new Filme(generoTerror, 12L, "A Invocação Do Mal 2"));
-            listaFilmes.add(new Filme(generoTerror, 13L, "Exorcista"));
-            listaFilmes.add(new Filme(generoTerror, 14L, "Anabelle"));
-            listaFilmes.add(new Filme(generoTerror, 15L, "A Morte do Diabo"));
-            listaFilmes.add(new Filme(generoTerror, 16L, "Madrugada dos Mortos"));
-
-            //Inicializa lista de filmes: Ação
-            listaFilmes.add(new Filme(generoAcao, 17L, "Duro de Matar 4.0"));
-            listaFilmes.add(new Filme(generoAcao, 18L, "Velozes e Furiosos 9"));
-            listaFilmes.add(new Filme(generoAcao, 19L, "Rambo"));
-            listaFilmes.add(new Filme(generoAcao, 20L, "Avengers: Guerra Infinita"));
-            listaFilmes.add(new Filme(generoAcao, 21L, "Jason Bourne"));
-
-            //Inicializa lista de filmes: Romance
-            listaFilmes.add(new Filme(generoRomance, 22L, "A Culpa é Das Estrelas"));
-            listaFilmes.add(new Filme(generoRomance, 23L, "Titanic"));
-            listaFilmes.add(new Filme(generoRomance, 24L, "Amor Além Da Vida"));
-            listaFilmes.add(new Filme(generoRomance, 25L, "A Escolha"));
-            listaFilmes.add(new Filme(generoRomance, 26L, "Questão de Tempo"));
-
-            //Deleta a lista de filmes
-            filmeDAO.deleteAll();
-
-            //Grava na tabela de genero a lista de filmes
-            filmeDAO.insertAll(listaFilmes);
-            */
-
-        //Recupera todos filmes por generos
-        buscarTodosOsFilmesPorGenero(genero.getId());
-
-        //  }).start();
-
-    }
-
     private boolean validaFilmeSelecionadoUsuario(long idGenero, long idFilme) {
 
         if (usuarioDAO.getByIdGeneroFilme(idGenero, idFilme) > 0) {
@@ -262,7 +185,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
 
         new Thread(() -> {
 
-            List<Filme> filmes = (List<Filme>) filmeDAO.getByGenreId(generoId);
+            List<Filme> filmes = filmeDAO.getByGenreId(generoId);
 
             //Atualiza a lista de filmes selecionados anteriormente pelo usuário
             for (Filme linhaFilme : filmes) {

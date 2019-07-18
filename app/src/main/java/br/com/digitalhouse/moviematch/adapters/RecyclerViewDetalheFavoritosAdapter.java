@@ -77,7 +77,7 @@ public class RecyclerViewDetalheFavoritosAdapter
     }
 
     /*
-    //Limpa os generos
+    //Limpa os filmes
     public void clear(){
         this.filmes.clear();
         notifyDataSetChanged();

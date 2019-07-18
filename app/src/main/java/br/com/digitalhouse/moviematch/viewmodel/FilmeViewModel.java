@@ -11,6 +11,7 @@ import java.util.List;
 
 import br.com.digitalhouse.moviematch.data.database.Database;
 import br.com.digitalhouse.moviematch.data.database.dao.FilmeDAO;
+import br.com.digitalhouse.moviematch.data.database.dao.UsuarioDAO;
 import br.com.digitalhouse.moviematch.model.filme.Filme;
 import br.com.digitalhouse.moviematch.model.filme.FilmeResponse;
 import br.com.digitalhouse.moviematch.repository.FilmeRepository;
@@ -52,11 +53,11 @@ public class FilmeViewModel extends AndroidViewModel {
 
     }
 
-    public void searchFilme() {
+    public void searchFilme(long generoId) {
 
         if (isNetworkConnected(getApplication())) {
 
-            getApiFilme();
+            getApiFilme(generoId);
 
         } else {
 
@@ -78,10 +79,10 @@ public class FilmeViewModel extends AndroidViewModel {
         );
     }
 
-    private void getApiFilme() {
+    private void getApiFilme(long generoId) {
 
         disposable.add(
-                repository.getFilmeApi()
+                repository.getFilmeApi(generoId)
                         .subscribeOn(Schedulers.newThread())
                         .map(filmeResponse -> saveItems(filmeResponse))
                         .observeOn(AndroidSchedulers.mainThread())
@@ -99,6 +100,18 @@ public class FilmeViewModel extends AndroidViewModel {
                 .getApplicationContext())
                 .filmeDAO();
 
+        UsuarioDAO usuarioDAO = Database.getDatabase(getApplication()
+                .getApplicationContext())
+                .usuarioDAO();
+
+        //Atualiza os filmes já selecionados anteriormente pelo Usuario
+        for (Filme linhaFilme : filmeResponse.getFilmes()) {
+            if (usuarioDAO.getByIdFilme(linhaFilme.getId()) != 0) { //Filme selecionado
+                linhaFilme.setFilmeSelecionado(true);
+            }
+        }
+
+        filmeDAO.deleteAll();
         filmeDAO.insertAll(filmeResponse.getFilmes());
 
         return filmeResponse;

@@ -111,7 +111,7 @@ public class FavoritosActivity extends AppCompatActivity
         usuarioDAO = Database.getDatabase(this).usuarioDAO();
 
         //Busca Lista de Gêneros
-        recuperaListaGeneros();
+        buscarTodosOsGeneros();
 
         //Atualiza a quantidade de Filmes selecionados na tela
         preparaQuantidadeFilmesSelecionados();
@@ -146,33 +146,6 @@ public class FavoritosActivity extends AppCompatActivity
         });
     }
 
-
-    private void recuperaListaGeneros() {
-
-        //new Thread(() -> {
-
-            /*
-            //Inicializa lista de generos:
-            List<Genero> listaGeneros = new ArrayList<>();
-
-            listaGeneros.add(new Genero(10L, "Lançamentos"));
-            listaGeneros.add(new Genero(20L, "Comédia"));
-            listaGeneros.add(new Genero(30L, "Terror"));
-            listaGeneros.add(new Genero(40L, "Ação"));
-            listaGeneros.add(new Genero(100L, "Romance"));
-
-            //Deleta e Grava na tabela de genero a lista de generos
-            generoDAO.deleteAll();
-            generoDAO.insertAll(listaGeneros);
-            */
-
-        //Recupera todos os generos do banco de dados
-        buscarTodosOsGeneros();
-
-        //}).start();
-
-    }
-
     private void buscarTodosOsGeneros() {
         generoDAO.getAllRxJava()
                 .subscribeOn(Schedulers.newThread())
@@ -183,7 +156,6 @@ public class FavoritosActivity extends AppCompatActivity
                     Log.i("TAG", "buscarTodosOsContatos: " + throwable.getMessage());
                 });
     }
-
 
     @Override
     protected void onRestart() {

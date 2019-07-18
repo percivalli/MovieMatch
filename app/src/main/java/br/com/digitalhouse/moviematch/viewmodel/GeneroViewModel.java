@@ -83,9 +83,7 @@ public class GeneroViewModel extends AndroidViewModel {
         disposable.add(
                 repository.getGeneroApi()
                         .subscribeOn(Schedulers.newThread())
-                        .map(generoResponse -> {
-                            return saveItems(generoResponse);
-                        })
+                        .map(generoResponse -> saveItems(generoResponse))
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(true))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
@@ -101,6 +99,7 @@ public class GeneroViewModel extends AndroidViewModel {
                 .getApplicationContext())
                 .generoDAO();
 
+        generoDAO.deleteAll();
         generoDAO.insertAll(generoResponse.getGeneros());
 
         return generoResponse;

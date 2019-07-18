@@ -14,7 +14,6 @@ import io.reactivex.Single;
 
 import static br.com.digitalhouse.moviematch.data.network.ApiService.API_KEY;
 import static br.com.digitalhouse.moviematch.data.network.ApiService.LANGUAGE;
-import static br.com.digitalhouse.moviematch.data.network.ApiService.PAGE;
 import static br.com.digitalhouse.moviematch.data.network.ApiService.POPULARITY;
 
 public class FilmeRepository {
@@ -33,12 +32,14 @@ public class FilmeRepository {
 
         Database database = Database.getDatabase(context);
         FilmeDAO filmeDAO = database.filmeDAO();
+
+        filmeDAO.deleteAll();
         filmeDAO.insertAll(filmes);
     }
 
     //Pega os items que virão da api de filmes
-    public Single<FilmeResponse> getFilmeApi() {
+    public Single<FilmeResponse> getFilmeApi(long generoId) {
 
-        return ApiService.getApiService().getFilme(API_KEY, LANGUAGE, POPULARITY);//teste
+        return ApiService.getApiService().getFilme(API_KEY, LANGUAGE, POPULARITY, generoId);
     }
 }

@@ -33,7 +33,7 @@ public interface FilmeDAO {
     @Query("SELECT * FROM filmes")
     List<Filme> getAll();
 
-    @Query("SELECT * FROM filmes WHERE title = '1'")
+    @Query("SELECT * FROM filmes")
     Flowable<List<Filme>> getAllRxJava();
 
     @Query("SELECT * FROM filmes WHERE id = :id")

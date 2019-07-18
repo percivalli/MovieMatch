@@ -1,10 +1,10 @@
 package br.com.digitalhouse.moviematch.data.network;
 
-import com.facebook.stetho.BuildConfig;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
+import br.com.digitalhouse.moviematch.BuildConfig;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -19,8 +19,6 @@ public class ApiService {
 
     public static final String LANGUAGE = "pt-BR";
 
-    public static final Integer PAGE = 1;//TESTE
-
     public static final String POPULARITY = "popularity.desc";
 
     private static Retrofit retrofit;
@@ -34,7 +32,6 @@ public class ApiService {
             httpClient.readTimeout(30, TimeUnit.SECONDS);
             httpClient.connectTimeout(30, TimeUnit.SECONDS);
             httpClient.writeTimeout(30, TimeUnit.SECONDS);
-
 
             // Se for Debug habilitamos os logs
             if (BuildConfig.DEBUG) {
