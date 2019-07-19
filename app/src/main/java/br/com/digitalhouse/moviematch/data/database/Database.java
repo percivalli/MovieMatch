@@ -14,7 +14,7 @@ import br.com.digitalhouse.moviematch.model.genero.Genero;
 import br.com.digitalhouse.moviematch.model.usuario.Usuario;
 
 @androidx.room.Database(
-        entities = {Genero.class, Filme.class, Usuario.class}, version = 11, exportSchema = false)
+        entities = {Genero.class, Filme.class, Usuario.class}, version = 17, exportSchema = false)
 @TypeConverters(Converters.class)
 
 public abstract class Database extends RoomDatabase {
@@ -27,6 +27,7 @@ public abstract class Database extends RoomDatabase {
 
     //Controla os generos e filmes escolhidos pelo usuario
     public abstract UsuarioDAO usuarioDAO();
+
 
     public static Database getDatabase(Context context) {
 

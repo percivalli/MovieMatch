@@ -10,8 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,7 @@ import br.com.digitalhouse.moviematch.data.database.dao.GeneroDAO;
 import br.com.digitalhouse.moviematch.data.database.dao.UsuarioDAO;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewFavoritosClickListener;
 import br.com.digitalhouse.moviematch.model.genero.Genero;
+import br.com.digitalhouse.moviematch.viewmodel.GeneroViewModel;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -48,6 +52,9 @@ public class FavoritosActivity extends AppCompatActivity
 
     private int quantidadeFilmesSelecionados;
 
+    //Declaração do ViewModel
+    private GeneroViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,16 +77,41 @@ public class FavoritosActivity extends AppCompatActivity
         adapter = new RecyclerViewFavoritosAdapter(listaGeneros, this);
         recyclerView.setAdapter(adapter);
 
+        //****************************** View Model ******************************************
+        // Inicializa ViewModel
+        viewModel = ViewModelProviders.of(this).get(GeneroViewModel.class);
+        viewModel.searchGenero();
+
+        // Adicionar os observables
+        viewModel.getGeneroLiveData().observe(this, generos -> adapter.update(listaGeneros));
+
+        /*
+        //Observable Loading
+        viewModel.getLoadingLiveData().observe(this, isLoading -> {
+
+            if (isLoading) {
+                progressBar.setVisibility(View.VISIBLE);
+            } else {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+        */
+
+        //Observable Error
+        viewModel.getErrorLiveData().observe(this, throwable -> {
+            Snackbar.make(recyclerView, throwable.getMessage(), Snackbar.LENGTH_SHORT).show();
+
+        });
+        //****************************** View Model ******************************************
+
         //Permite comunicação/acesso aos registros da tabela Genero
         generoDAO = Database.getDatabase(this).generoDAO();
 
         //Permite comunicação/acesso aos registros da tabela Usuario
         usuarioDAO = Database.getDatabase(this).usuarioDAO();
 
-        //Solução temporária até a inclusão da chamada da API **************************************
-        //insere e busca dados na tabela de generos
-        inserirDadosTemporarios();
-        //Solução temporária até a inclusão da chamada da API **************************************
+        //Busca Lista de Gêneros
+        buscarTodosOsGeneros();
 
         //Atualiza a quantidade de Filmes selecionados na tela
         preparaQuantidadeFilmesSelecionados();
@@ -112,30 +144,6 @@ public class FavoritosActivity extends AppCompatActivity
                 }
             }
         });
-    }
-
-    private void inserirDadosTemporarios() {
-
-        new Thread(() -> {
-
-            //Inicializa lista de generos:
-            List<Genero> listaGeneros = new ArrayList<>();
-
-            listaGeneros.add(new Genero(10L, "Lançamentos"));
-            listaGeneros.add(new Genero(20L, "Comédia"));
-            listaGeneros.add(new Genero(30L, "Terror"));
-            listaGeneros.add(new Genero(40L, "Ação"));
-            listaGeneros.add(new Genero(100L, "Romance"));
-
-            //Deleta e Grava na tabela de genero a lista de generos
-            generoDAO.deleteAll();
-            generoDAO.insertAll(listaGeneros);
-
-            //Recupera todos os generos do banco de dados
-            buscarTodosOsGeneros();
-
-        }).start();
-
     }
 
     private void buscarTodosOsGeneros() {

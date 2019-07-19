@@ -63,6 +63,14 @@ public class RecyclerViewFavoritosAdapter
         return generos.size();
     }
 
+    /*
+    //Limpa os generos
+    public void clear(){
+        this.generos.clear();
+        notifyDataSetChanged();
+    }
+    */
+
     //Atualiza a lista de generos
     public void update(List<Genero> generosList) {
         this.generos = generosList;

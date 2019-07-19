@@ -38,8 +38,8 @@ public interface UsuarioDAO {
     @Query("SELECT * FROM usuarios_filme WHERE id_genero= :idGenero")
     Usuario getByIdGenero(long idGenero);
 
-    @Query("SELECT * FROM usuarios_filme WHERE id_filme = :idFilme")
-    Usuario getByIdFilme(long idFilme);
+    @Query("SELECT COUNT(id_filme) FROM usuarios_filme WHERE id_filme = :idFilme")
+    int getByIdFilme(long idFilme);
 
     @Query("SELECT COUNT(id_filme) FROM usuarios_filme WHERE id_filme = :idFilme AND id_genero= :idGenero")
     int getByIdGeneroFilme(long idGenero, long idFilme);

@@ -93,14 +93,6 @@ public class Filme {
         return genreIds;
     }
 
-    public long getGenreId() {
-        return genreId;
-    }
-
-    public void setGenreId(long genreId) {
-        this.genreId = genreId;
-    }
-
     public void setGenreIds(List<Long> genreIds) {
 
         //if (genreIds.size() != 0){
@@ -108,6 +100,14 @@ public class Filme {
         //}
 
         this.genreIds = genreIds;
+    }
+
+    public long getGenreId() {
+        return genreId;
+    }
+
+    public void setGenreId(long genreId) {
+        this.genreId = genreId;
     }
 
     public Long getId() {
