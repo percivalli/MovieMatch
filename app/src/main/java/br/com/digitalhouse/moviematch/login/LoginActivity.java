@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout textInputLayoutLoginPassword;
     private Button btnLoginLogin;
     private Button btnLoginCriarConta;
-    private Button btnLoginFacebook;
+//  private Button btnLoginFacebook;
     private Button btnLoginGoogle;
 
     @Override
@@ -75,14 +75,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //Botão User Facebook
-        btnLoginFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+ //       btnLoginFacebook.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+    //        public void onClick(View v) {
 
                 // --> Incluir chamada da Tela para Login pelo Facebook
 
-            }
-        });
+      //      }
+      //  });
 
         //Botão Usar Google
         btnLoginGoogle.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
         textInputLayoutLoginPassword = findViewById(R.id.textInputLayoutLoginPassword);
         btnLoginLogin = findViewById(R.id.btnLoginLogin);
         btnLoginCriarConta = findViewById(R.id.btnLoginCriarConta);
-        btnLoginFacebook = findViewById(R.id.btnLoginFacebook);
+  //    btnLoginFacebook = findViewById(R.id.btnLoginFacebook);
         btnLoginGoogle = findViewById(R.id.btnLoginGoogle);
     }
 

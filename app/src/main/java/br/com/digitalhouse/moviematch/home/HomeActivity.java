@@ -15,7 +15,7 @@ import br.com.digitalhouse.moviematch.login.LoginActivity;
 public class HomeActivity extends AppCompatActivity {
 
     private Button btnHomeCriar;
-    private Button btnHomeFacebook;
+    //private Button btnHomeFacebook;
     private Button btnHomeGoogle;
     private SwitchCompat swithHomeTermos;
 
@@ -43,17 +43,17 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //Botão Usar Facebook
-        btnHomeFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+       // btnHomeFacebook.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
 
                 //Permite entrar pela conta Facebook somente se o termo de uso for aceito
-                if (validaTermoUso()) {
+        //        if (validaTermoUso()) {
                     // --> Incluir chamada da Tela para Login pelo Facebook
-                }
-
-            }
-        });
+//                }
+//
+  //          }
+    //    });
 
         //Botão Usar Google
         btnHomeGoogle.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
     public void inicializaViews() {
 
         btnHomeCriar = findViewById(R.id.btnHomeCriar);
-        btnHomeFacebook = findViewById(R.id.btnHomeFacebook);
+    //  btnHomeFacebook = findViewById(R.id.btnHomeFacebook);
         btnHomeGoogle = findViewById(R.id.btnHomeGoogle);
         swithHomeTermos = findViewById(R.id.swithHomeTermos);
 
