@@ -1,6 +1,6 @@
 package br.com.digitalhouse.moviematch.data.network;
 
-import com.facebook.stetho.okhttp3.StethoInterceptor;
+//import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +39,7 @@ public class ApiService {
                 HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
                 httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
                 httpClient.addInterceptor(httpLoggingInterceptor);
-                httpClient.addNetworkInterceptor(new StethoInterceptor());
+            //    httpClient.addNetworkInterceptor(new StethoInterceptor());
             }
 
             retrofit = new Retrofit.Builder()
