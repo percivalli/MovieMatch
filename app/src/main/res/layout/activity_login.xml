@@ -118,7 +118,7 @@
                     android:focusable="false" />
             </LinearLayout>
 
-            <Button
+            <!--Button
                 android:id="@+id/btnLoginFacebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 android:padding="16dp"
                 android:text="@string/usar_facebook"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent" -->
 
             <Button
                 android:id="@+id/btnLoginGoogle"
