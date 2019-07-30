@@ -160,10 +160,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+    /*@Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Toast.makeText(getApplicationContext(), "Falha na conexão", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
