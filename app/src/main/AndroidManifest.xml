@@ -2,21 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.digitalhouse.moviematch">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Perfil.InformacoesPerfil"></activity>
-        <activity android:name=".Perfil.PerfilActivity" />
-        <activity android:name=".Perfil.Main2Activity" />
-        <activity android:name=".favoritos.DetalheFavoritosActivity" />
-        <activity android:name=".favoritos.MenuFavoritosActivity" />
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.DetailActivity"></activity>
+        <activity
+            android:name=".view.DetailActivity"
+            android:parentActivityName=".home.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.digitalhouse.moviematch.home.HomeActivity" />
+        </activity>
+        <activity android:name=".meus_matchs.MeusMatchsActivity" />
         <activity android:name=".login.LoginActivity" />
+        <activity android:name=".perfil.PerfilActivity" />
+        <activity android:name=".deu_match.DeuMatchActivity" />
+        <activity android:name=".dar_match.DarMatchActivity" />
+        <activity android:name=".favoritos.DetalheFavoritosActivity" />
+        <activity android:name=".favoritos.FavoritosActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />
-        <activity android:name=".home.MainActivity" />
+        <activity android:name=".home.HomeActivity" />
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

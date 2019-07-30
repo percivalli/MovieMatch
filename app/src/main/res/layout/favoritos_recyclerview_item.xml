@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,29 +7,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textViewFavoritosNomeGenero"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/background_arredondado_topico"
                 android:gravity="left|center"
+                android:lines="1"
                 android:paddingStart="80dp"
                 android:text="Nome do genero"
-                android:textColor="#F7FF00"
-
+                android:textColor="@color/corfonteMovie"
                 android:textSize="24sp" />
 
             <TextView
@@ -45,20 +49,19 @@
 
         </FrameLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButtonFavoritos"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center|right"
             android:layout_marginStart="16dp"
             android:backgroundTint="#3C495A"
-            android:clickable="true"
+            android:clickable="false"
             android:tint="#ffffff"
             app:fabSize="auto"
             app:srcCompat="@drawable/ic_add_black_24dp" />
 
-
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

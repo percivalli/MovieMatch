@@ -1,22 +1,24 @@
 package br.com.digitalhouse.moviematch.adapters;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import br.com.digitalhouse.moviematch.R;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
+import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.interfaces.RecyclerViewFavoritosClickListener;
-import br.com.digitalhouse.moviematch.model.GeneroFilme;
+import br.com.digitalhouse.moviematch.model.genero.Genero;
 
 public class RecyclerViewFavoritosAdapter
         extends RecyclerView.Adapter<RecyclerViewFavoritosAdapter.ViewHolder> {
 
     //Atributos
-    private List<GeneroFilme> listaGenerosFilmes;
+    private List<Genero> generos;
     private RecyclerViewFavoritosClickListener listener;
 
     //Construtor
@@ -24,10 +26,8 @@ public class RecyclerViewFavoritosAdapter
     }
 
     public RecyclerViewFavoritosAdapter(
-            List<GeneroFilme> listaGenerosFilmes,
-            RecyclerViewFavoritosClickListener listener) {
-
-        this.listaGenerosFilmes = listaGenerosFilmes;
+            List<Genero> generos, RecyclerViewFavoritosClickListener listener) {
+        this.generos = generos;
         this.listener = listener;
     }
 
@@ -36,25 +36,23 @@ public class RecyclerViewFavoritosAdapter
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(
-                R.layout.favoritos_recyclerview_item,
-                viewGroup,
-                false);
+                R.layout.favoritos_recyclerview_item, viewGroup, false);
 
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
 
-        final GeneroFilme generoFilme = listaGenerosFilmes.get(position);
-        viewHolder.setConteudoNaTela(generoFilme);
+        final Genero genero = generos.get(position);
+
+        viewHolder.setConteudoNaTela(genero);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClick(generoFilme);
+                listener.onClick(genero);
             }
         });
 
@@ -62,7 +60,21 @@ public class RecyclerViewFavoritosAdapter
 
     @Override
     public int getItemCount() {
-        return listaGenerosFilmes.size();
+        return generos.size();
+    }
+
+    /*
+    //Limpa os generos
+    public void clear(){
+        this.generos.clear();
+        notifyDataSetChanged();
+    }
+    */
+
+    //Atualiza a lista de generos
+    public void update(List<Genero> generosList) {
+        this.generos = generosList;
+        notifyDataSetChanged();
     }
 
 
@@ -81,14 +93,13 @@ public class RecyclerViewFavoritosAdapter
         }
 
         //Atribuição das views os valores da variável GeneroFilme
-        public void setConteudoNaTela(GeneroFilme generoFilme) {
+        public void setConteudoNaTela(Genero genero) {
 
-            textViewFavoritosNomeGenero.setText(generoFilme.getNomeGenero());
+            textViewFavoritosNomeGenero.setText(genero.getName());
 
             //Primeira letra do Nome do Genero
-            textViewFavoritosLetraGenero.setText(generoFilme.getNomeGenero().substring(0, 1));
+            textViewFavoritosLetraGenero.setText(genero.getName().substring(0, 1));
 
         }
-
     }
 }

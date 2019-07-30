@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundoMovie"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fundoMovie"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_simples"></include>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchTituloFilmesComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/filmes_em_comum"
+            android:textColor="@color/corfonteMovie"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchFilmesComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar"
+            android:textColor="#ffff"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchTituloGenerosComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/g_neros_em_comum"
+            android:textColor="@color/corfonteMovie"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDarMatchGenerosComum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/com_dia_e_a_o"
+            android:textColor="#ffff"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageViewNaoDarMatch"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="25dp"
+                android:src="@drawable/sempipoca"
+                app:civ_border_color="#828FA4" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageViewDarMatch"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="25dp"
+                android:src="@drawable/pipoca_coracao"
+                app:civ_border_color="#828FA4" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewDarMatchMensagemRodape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/voc_e_fulano_combinam_tantos_ser_que_vai_rolar"
+            android:textColor="@color/corfonteMovie"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>
