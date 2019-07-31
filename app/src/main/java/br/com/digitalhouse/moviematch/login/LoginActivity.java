@@ -3,16 +3,11 @@ package br.com.digitalhouse.moviematch.login;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-//import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,12 +23,17 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
 import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
-public class LoginActivity extends AppCompatActivity {
+//import android.support.v7.app.AppCompatActivity;
+//import androidx.appcompat.widget.Toolbar;
+
+public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private Toolbar toolbar;
     private TextView toobarTitle;
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(LoginActivity.this, this)
+                .enableAutoManage(LoginActivity.this, (GoogleApiClient.OnConnectionFailedListener) this )
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -82,11 +82,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (validaDadosLogin()) {
 
                     //Chama a tela de Perfil
-                    //Intent intent = new Intent(LoginActivity.this,
-                    //        PerfilActivity.class);
-
                     Intent intent = new Intent(LoginActivity.this,
-                            FavoritosActivity.class);
+                            PerfilActivity.class);
+
+                    /*Intent intent = new Intent(LoginActivity.this,
+                            FavoritosActivity.class);*/
 
                     startActivity(intent);
                 }
@@ -160,10 +160,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    /*@Override
+    @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Toast.makeText(getApplicationContext(), "Falha na conexão", Toast.LENGTH_SHORT).show();
-    }*/
+    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
