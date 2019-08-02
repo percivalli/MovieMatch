@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
+import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -53,11 +54,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (validaDadosLogin()) {
 
                     //Chama a tela de Perfil
-                    //Intent intent = new Intent(LoginActivity.this,
-                    //        PerfilActivity.class);
-
                     Intent intent = new Intent(LoginActivity.this,
-                            FavoritosActivity.class);
+                            PerfilActivity.class);
+
+                    /*Intent intent = new Intent(LoginActivity.this,
+                            FavoritosActivity.class);*/
 
                     startActivity(intent);
                 }
