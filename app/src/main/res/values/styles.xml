@@ -3,9 +3,44 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#00BCD4</item>
+        <item name="colorPrimaryDark">@color/corstatusBar</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">#212121</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="mySpinnerItemStyle">
+        <item name="android:textColorSecondary">#F7FF00</item>
+    </style>
+
+    <style name="SpinnerTema1" parent="AppBaseTheme">
+        <item name="android:textColor">#F7FF00</item>
+        <item name="android:background">#1E2D3E</item>
+        <item name="android:textColorSecondary">#F7FF00</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SpinnerCadastro" parent="AppBaseTheme">
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">@color/corFundoTextoClaro</item>
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:textColorSecondary">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

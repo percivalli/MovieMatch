@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fundoMovie"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar"></include>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextCadastroNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="@dimen/margem_dupla"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="#976DD0"
+            android:hint="@string/nome"
+            android:inputType="text"
+            android:padding="@dimen/margem_simples"
+            android:textColor="@color/corTextoBranco"
+            android:textColorHint="@color/corTextoBranco" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextCadastroIdade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="#976DD0"
+            android:hint="@string/idade"
+            android:inputType="number"
+            android:padding="@dimen/margem_simples"
+            android:textColor="@color/corTextoBranco"
+            android:textColorHint="@color/corTextoBranco" />
+
+        <Spinner
+            android:id="@+id/spinnerCadastroSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="@color/corFundoTextoClaro"
+            android:drawSelectorOnTop="true"
+            android:padding="8dp"
+            android:popupTheme="@style/SpinnerCadastro"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="true" />
+
+        <Spinner
+            android:id="@+id/spinnerCadastroCidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_simples"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/margem_simples"
+            android:background="@color/corFundoTextoClaro"
+            android:drawSelectorOnTop="true"
+            android:padding="8dp"
+            android:popupTheme="@style/SpinnerCadastro"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="true" />
+
+        <Button
+            android:id="@+id/btnCadastroFinalizar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margem_dupla"
+            android:background="@color/corfonteMovie"
+            android:padding="@dimen/margem_simples"
+            android:paddingStart="@dimen/margem_dupla"
+            android:paddingEnd="@dimen/margem_dupla"
+            android:text="@string/finalizar"
+            android:textColor="@color/fundoMovie" />
+
+    </LinearLayout>
+</ScrollView>

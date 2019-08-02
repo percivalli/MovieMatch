@@ -2,5 +2,17 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="fundoMovie">#585280</color>
+    <color name="corfonteMovie">#F7FF00</color>
+    <color name="corBotaoSplash">#3C4858</color>
+    <color name="corFundoRecyclerViewOn">#F9FAFC</color>
+    <color name="corFundoRecyclerViewOff">#E5E9F2</color>
+    <color name="corstatusBar">#585280</color>
+    <color name="corTextoBranco">#ffffff</color>
+    <color name="corFundoTextoClaro">#976DD0</color>
+    <color name="backgroundperfil">#FF000000</color>
+    <color name="corBotaoProsseguir">#1E2D3E</color>
 </resources>
+
+
