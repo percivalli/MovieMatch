@@ -12,7 +12,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/avatar"
+        android:src="@drawable/perfil_novo"
         app:civ_border_color="@color/backgroundperfil"
         app:civ_border_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
