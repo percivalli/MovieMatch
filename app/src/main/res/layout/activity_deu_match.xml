@@ -44,7 +44,7 @@
                     android:layout_height="170dp"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    android:src="@drawable/avatar" />
+                    android:src="@drawable/perfil_novo" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/usuario2"
@@ -54,7 +54,7 @@
                     android:layout_marginEnd="8dp"
 
                     android:layout_weight="1"
-                    android:src="@drawable/avatar" />
+                    android:src="@drawable/uosh_1" />
             </LinearLayout>
 
             <ImageView
@@ -84,7 +84,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:gravity="center_horizontal"
-            android:text="@string/avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar"
+            android:text="@string/filmes_3"
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:textStyle="normal" />

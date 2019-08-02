@@ -21,6 +21,9 @@
         <activity android:name=".perfil.PerfilActivity" />
         <activity android:name=".deu_match.DeuMatchActivity" />
         <activity android:name=".dar_match.DarMatchActivity" />
+        <activity android:name=".dar_match.DarMatchActivity2" />
+        <activity android:name=".dar_match.DarMatchActivity3" />
+        <activity android:name=".dar_match.DarMatchActivity1" />
         <activity android:name=".favoritos.DetalheFavoritosActivity" />
         <activity android:name=".favoritos.FavoritosActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />

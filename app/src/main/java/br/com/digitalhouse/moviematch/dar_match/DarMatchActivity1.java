@@ -5,16 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import br.com.digitalhouse.moviematch.R;
-import br.com.digitalhouse.moviematch.deu_match.DeuMatchActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DarMatchActivity extends AppCompatActivity {
+public class DarMatchActivity1 extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TextView toobarTitle;
@@ -32,7 +30,7 @@ public class DarMatchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dar_match);
+        setContentView( R.layout.activity_dar_match_1);
 
         // Toolbar
         //toolbar = findViewById(R.id.toolbar);
@@ -72,17 +70,16 @@ public class DarMatchActivity extends AppCompatActivity {
         btnNaoDeuMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(DarMatchActivity.this, DarMatchActivity1.class);
-                //intent.putExtra("GENERO_FILME", generoFilme);
-                startActivity(intent);
-
                 /*
                 Toast.makeText(getApplicationContext(),
                         "Que pena não foi desta vez!",
                         Toast.LENGTH_SHORT).show();
 
                 Snackbar.make(v, "Que pena, não foi dessa vez!", Snackbar.LENGTH_SHORT).show();*/
+
+                Intent intent = new Intent(DarMatchActivity1.this, DarMatchActivity2.class);
+                //intent.putExtra("GENERO_FILME", generoFilme);
+                startActivity(intent);
             }
         });
     }
