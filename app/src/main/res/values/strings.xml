@@ -18,14 +18,23 @@
     <string name="usar_facebook">USAR FACEBOOK</string>
     <string name="login">LOGIN</string>
     <string name="criar_conta">CRIAR CONTA</string>
-    <string name="voc_e_fulano_combinam_tantos_ser_que_vai_rolar">Você e Marquito combinam 87%. Será que vai rolar?</string>
+    <string name="combo_1">Você e Marquito combinam 57%. Será que vai rolar?</string>
     <string name="filmes_em_comum">Filmes em comum:</string>
-    <string name="avengers_endgame_todo_mundo_em_p_nico_e_duro_de_matar">Avengers, Endgame, Todo mundo em pânico e Duro de matar...</string>
+    <string name="filmes_0">Duro de Matar, A História do Mundo e Ratinho nos Cinemas</string>
     <string name="g_neros_em_comum">Gêneros em comum:</string>
     <string name="com_dia_e_a_o">Comédia e Ação</string>
     <string name="ou">Ou</string>
     <string name="voc_e_fulano_agora_podem_conversar_sobre_os_filmes_e_g_neros_que_tem_em_comum">Você e fulano agora podem conversar sobre os filmes e gêneros que tem em comum!</string>
     <string name="sem_titulo">SEM TITULO</string>
+    <string name="match_1">Mulher Maravilha, PHP Em Ação e Alto da Cumpadecida</string>
+    <string name="generos_1">Ficção e Suspense</string>
+    <string name="combo_2">Você e Vini combinam 45%. Será que vai rolar?</string>
+    <string name="filmes_2">Quem Roubou Meus Direitos?, Fake News ao Resgate e Bambi</string>
+    <string name="genereos_2">Drama</string>
+    <string name="combo_3">Você e Biroliro Rocker combinam 15%. Será que vai rolar?</string>
+    <string name="filmes_3">Avengers: Endgame, Todo mundo em Pânico e Velozes e Furiosos</string>
+    <string name="comum_3">Ação e Comédia</string>
+    <string name="combo_4">Você e Cumpadi Uóshito Style combinam 99%. Será que vai rolar?</string>
 
     <string-array name="arrayCidades">
         <item>Cidade</item>
