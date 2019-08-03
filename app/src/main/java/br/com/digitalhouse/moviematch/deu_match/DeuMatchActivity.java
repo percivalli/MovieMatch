@@ -27,8 +27,10 @@ public class DeuMatchActivity extends AppCompatActivity {
         //toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        toobarTitle = findViewById(R.id.toolbarTitleSimplesSemImagem);
-        toobarTitle.setText("DEU MATCH!");
+        Toolbar toolbar = findViewById(R.id.toolbarTitleSimplesSemImagem);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         //Inicialização das Views
         imageViewEmail = findViewById(R.id.imageViewEmail);

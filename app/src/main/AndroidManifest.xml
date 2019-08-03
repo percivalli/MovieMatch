@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.digitalhouse.moviematch">
 
@@ -19,7 +20,14 @@
         <activity android:name=".meus_matchs.MeusMatchsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".perfil.PerfilActivity" />
-        <activity android:name=".deu_match.DeuMatchActivity" />
+            <activity
+                android:name=".deu_match.DeuMatchActivity"
+                android:label="DEU MATCH!"
+                android:parentActivityName=".perfil.PerfilActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".perfil.PerfilActivity" />
+            </activity>
         <activity android:name=".dar_match.DarMatchActivity" />
         <activity android:name=".favoritos.DetalheFavoritosActivity" />
         <activity android:name=".favoritos.FavoritosActivity" />

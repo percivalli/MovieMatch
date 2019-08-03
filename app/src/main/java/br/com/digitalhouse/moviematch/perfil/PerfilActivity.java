@@ -47,6 +47,7 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("PERFIL");
 
+
         //Inicialização das Views
         inicializaViews();
 
