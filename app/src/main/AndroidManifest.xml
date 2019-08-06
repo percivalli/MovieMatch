@@ -20,15 +20,26 @@
         <activity android:name=".meus_matchs.MeusMatchsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".perfil.PerfilActivity" />
+
+
             <activity
                 android:name=".deu_match.DeuMatchActivity"
                 android:label="DEU MATCH!"
-                android:parentActivityName=".perfil.PerfilActivity">
+                android:parentActivityName=".dar_match.DarMatchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".perfil.PerfilActivity" />
+                android:value=".dar_match.DarMatchActivity" />
             </activity>
-        <activity android:name=".dar_match.DarMatchActivity" />
+
+        <activity
+            android:name=".dar_match.DarMatchActivity"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
         <activity android:name=".favoritos.DetalheFavoritosActivity" />
         <activity android:name=".favoritos.FavoritosActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />
