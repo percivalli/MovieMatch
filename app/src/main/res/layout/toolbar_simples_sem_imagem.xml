@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:background="#283546"
-    android:elevation="4dp">
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-        android:id="@+id/toolbarTitleSimplesSemImagem"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="SEM TITULO"
-        android:textColor="@color/corfonteMovie"
-        android:textSize="@dimen/text_toolbar" />
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="#283546"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarTitleSimplesSemImagem"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:lines="1"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/sem_titulo"
+            android:textColor="@color/corfonteMovie"
+            android:textSize="@dimen/text_toolbar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
 </LinearLayout>
 
