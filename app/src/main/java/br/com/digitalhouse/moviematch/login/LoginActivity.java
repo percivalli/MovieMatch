@@ -3,12 +3,10 @@ package br.com.digitalhouse.moviematch.login;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,15 +14,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.cadastro.CadastroUsuarioActivity;
-import br.com.digitalhouse.moviematch.home.HomeActivity;
 import br.com.digitalhouse.moviematch.perfil.PerfilActivity;
 
 //import android.support.v7.app.AppCompatActivity;
@@ -42,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     //  private Button btnLoginFacebook;
     private Button btnLoginGoogle;
     public static final String GOOGLE_ACCOUNT = "google_account";
-    private GoogleSignInClient googleSignInClient;
+
 
     public LoginActivity() {
     }
@@ -58,15 +51,6 @@ public class LoginActivity extends AppCompatActivity {
 
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("CRIAR SUA CONTA");
-
-        GoogleSignInOptions gso = new GoogleSignInOptions
-                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()//request email id
-                .build();
-
-        googleSignInClient= GoogleSignIn.getClient(this, gso);
-        setDataOnView();
-
 
         //Incialização das Views
         textInputLayoutLoginEmail = findViewById(R.id.textInputLayoutLoginEmail);
@@ -169,10 +153,5 @@ public class LoginActivity extends AppCompatActivity {
             }
             return true;
         }
-    }
-
-    private void setDataOnView() {
-        GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
-
     }
 }
