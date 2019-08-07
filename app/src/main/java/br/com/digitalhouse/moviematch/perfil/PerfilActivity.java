@@ -12,10 +12,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.appcompat.app.AppCompatActivity;
 import br.com.digitalhouse.moviematch.R;
 import br.com.digitalhouse.moviematch.favoritos.FavoritosActivity;
 import br.com.digitalhouse.moviematch.meus_matchs.MeusMatchsActivity;
@@ -39,6 +38,9 @@ public class PerfilActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+       //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Toolbar
         //toolbar = findViewById(R.id.toolbar);

@@ -19,7 +19,7 @@
             android:layout_height="220dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:src="@drawable/marquito_01" />
+            android:src="@drawable/vini_1" />
 
         <TextView
             android:id="@+id/textViewDarMatchTituloFilmesComum"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="@string/filmes_0"
+            android:text="@string/match_1"
             android:textColor="#ffff"
             android:textSize="17sp"
             android:textStyle="normal" />
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="@string/com_dia_e_a_o"
+            android:text="@string/generos_1"
             android:textColor="#ffff"
             android:textSize="17sp"
             android:textStyle="normal" />
@@ -101,7 +101,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
-            android:text="@string/combo_1"
+            android:text="@string/combo_2"
             android:textColor="@color/corfonteMovie"
             android:textSize="15dp"
             android:textStyle="bold" />

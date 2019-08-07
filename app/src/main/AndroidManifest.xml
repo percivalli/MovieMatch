@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.wifi" />
 
         <application
         android:allowBackup="true"
@@ -21,6 +22,9 @@
         <activity android:name=".perfil.PerfilActivity" />
         <activity android:name=".deu_match.DeuMatchActivity" />
         <activity android:name=".dar_match.DarMatchActivity" />
+        <activity android:name=".dar_match.DarMatchActivity2" />
+        <activity android:name=".dar_match.DarMatchActivity3" />
+        <activity android:name=".dar_match.DarMatchActivity1" />
         <activity android:name=".favoritos.DetalheFavoritosActivity" />
         <activity android:name=".favoritos.FavoritosActivity" />
         <activity android:name=".cadastro.CadastroUsuarioActivity" />
