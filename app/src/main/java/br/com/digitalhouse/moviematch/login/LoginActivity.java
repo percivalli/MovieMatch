@@ -41,12 +41,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLoginCriarConta;
     //  private Button btnLoginFacebook;
     private Button btnLoginGoogle;
-    private FirebaseAuth firebaseAuth;
-    private GoogleSignInClient mGoogleSignInClient;
-    private FirebaseAuth.AuthStateListener authStateListener;
+    public static final String GOOGLE_ACCOUNT = "google_account";
     private GoogleSignInClient googleSignInClient;
-    private static final int RESULT_GOOGLE = 200;
-    //private CallbackManager callbackManager;
 
     public LoginActivity() {
     }
@@ -62,7 +58,14 @@ public class LoginActivity extends AppCompatActivity {
 
         toobarTitle = findViewById(R.id.toolbarTitleSimples);
         toobarTitle.setText("CRIAR SUA CONTA");
-        firebaseAuth = FirebaseAuth.getInstance();
+
+        GoogleSignInOptions gso = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()//request email id
+                .build();
+
+        googleSignInClient= GoogleSignIn.getClient(this, gso);
+        setDataOnView();
 
 
         //Incialização das Views
@@ -73,14 +76,6 @@ public class LoginActivity extends AppCompatActivity {
         //    btnLoginFacebook = findViewById(R.id.btnLoginFacebook);
         btnLoginGoogle = findViewById(R.id.btnLoginGoogle);
 
-        authStateListener = firebaseAuth -> {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user != null) {
-                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
-                finish();
-            }
-
-        };
 
         //Botão Login
         btnLoginLogin.setOnClickListener(new View.OnClickListener() {
@@ -126,11 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         //Botão Usar Google
         btnLoginGoogle.setOnClickListener(v -> {
             //Google Sign In
-            GoogleSignInOptions options = new GoogleSignInOptions
-                    .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(getString(R.string.default_web_client_id))
-                    .requestEmail()
-                    .build();
+
 
         });
     }
@@ -178,5 +169,10 @@ public class LoginActivity extends AppCompatActivity {
             }
             return true;
         }
+    }
+
+    private void setDataOnView() {
+        GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
+
     }
 }
