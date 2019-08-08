@@ -40,7 +40,9 @@ public class DarMatchActivity3 extends AppCompatActivity {
         //Inicializa Views
         inicializaViews();
 
-        toobarTitle.setText("VAI DAR MATCH?");
+        Toolbar toolbar = findViewById(R.id.toolbarTitleSimplesSemImagem);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Valida se a Intent foi preenchida
         if (getIntent() != null && getIntent().getExtras() != null) {

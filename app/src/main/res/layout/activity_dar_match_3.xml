@@ -12,7 +12,7 @@
         android:background="@color/fundoMovie"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar_simples"></include>
+        <include layout="@layout/toolbar_simples_sem_imagem"></include>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="220dp"

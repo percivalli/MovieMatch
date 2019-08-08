@@ -21,11 +21,33 @@
         <activity android:name=".meus_matchs.MeusMatchsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".perfil.PerfilActivity" />
-        <activity android:name=".deu_match.DeuMatchActivity" />
-        <activity android:name=".dar_match.DarMatchActivity" />
-        <activity android:name=".dar_match.DarMatchActivity2" />
-        <activity android:name=".dar_match.DarMatchActivity3" />
-        <activity android:name=".dar_match.DarMatchActivity1" />
+
+        <activity
+            android:name=".dar_match.DarMatchActivity2"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+        <activity
+            android:name=".dar_match.DarMatchActivity3"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+        <activity
+            android:name=".dar_match.DarMatchActivity1"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
 
 
             <activity

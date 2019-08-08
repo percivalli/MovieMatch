@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
                 //Permite criar a conta somente se o termo de uso for aceito
                 if (validaTermoUso()) {
                     Intent intent = new Intent(HomeActivity.this,
-                            PerfilActivity.class);
+                            LoginActivity.class);
 
                     startActivity(intent);
                 }
