@@ -15,6 +15,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/favoritosDefinidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Favoritos"
+            android:textColor="#F7FF00"
+            android:textSize="20sp" />
+
         <include layout="@layout/layout_subtitle_favoritos"></include>
 
         <include layout="@layout/content_detalhe_favoritos"></include>

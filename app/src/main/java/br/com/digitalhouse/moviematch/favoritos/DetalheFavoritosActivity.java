@@ -47,6 +47,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
     private Genero genero;
 
     private Button buttonProsseguir;
+    private TextView textFavoritosDefinidos;
 
     //Atributos
     private RecyclerView recyclerView;
@@ -67,7 +68,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalhe_favoritos);
+        setContentView(R.layout.activity_favoritos_definidos);
 
         // Toolbar
         //toolbar = findViewById(R.id.toolbar);
@@ -81,6 +82,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         textViewSubtituloNomeGenero = findViewById(R.id.textViewFavoritosNomeGenero);
         textViewFavoritosLetraGenero = findViewById(R.id.textViewFavoritosLetraGenero);
         buttonProsseguir = findViewById(R.id.buttonDetalheFavoritosNext);
+        textFavoritosDefinidos = findViewById(R.id.favoritosDefinidos);
 
         //Valida se a Intent foi preenchida
         if (getIntent() != null && getIntent().getExtras() != null) {
@@ -170,36 +172,59 @@ public class DetalheFavoritosActivity extends AppCompatActivity
                 }).start();
             }
         });
-    }
 
-    private boolean validaFilmeSelecionadoUsuario(long idGenero, long idFilme) {
+        textFavoritosDefinidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        if (usuarioDAO.getByIdGeneroFilme(idGenero, idFilme) > 0) {
-            return true;
-        }
+                new Thread(() -> {
+                    usuarioDAO.getByQtdeFilme();
 
-        return false;
-    }
+                    if (usuarioDAO.getByQtdeFilme() > 0) {
+                        buscarTodosOsFilmesPorGenero(genero.getId());
 
-    private void buscarTodosOsFilmesPorGenero(long generoId) {
+                        Intent intent = new Intent(DetalheFavoritosActivity.this,
+                                FavoritosDefinidosActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Selecionar pelo menos 1 filme",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }).start();
+            }
+        });
 
-        new Thread(() -> {
+        private boolean validaFilmeSelecionadoUsuario ( long idGenero, long idFilme){
 
-            List<Filme> filmes = filmeDAO.getByGenreId(generoId);
-
-            //Atualiza a lista de filmes selecionados anteriormente pelo usuário
-            for (Filme linhaFilme : filmes) {
-
-                if (validaFilmeSelecionadoUsuario(linhaFilme.getGenreId(), linhaFilme.getId())) {
-                    linhaFilme.setFilmeSelecionado(true);
-                }
+            if (usuarioDAO.getByIdGeneroFilme(idGenero, idFilme) > 0) {
+                return true;
             }
 
-            runOnUiThread(() -> {
-                adapter.update(filmes);
-            });
+            return false;
+        }
 
-        }).start();
+        private void buscarTodosOsFilmesPorGenero ( long generoId){
+
+            new Thread(() -> {
+
+                List<Filme> filmes = filmeDAO.getByGenreId(generoId);
+
+                //Atualiza a lista de filmes selecionados anteriormente pelo usuário
+                for (Filme linhaFilme : filmes) {
+
+                    if (validaFilmeSelecionadoUsuario(linhaFilme.getGenreId(), linhaFilme.getId())) {
+                        linhaFilme.setFilmeSelecionado(true);
+                    }
+                }
+
+                runOnUiThread(() -> {
+                    adapter.update(filmes);
+                });
+
+            }).start();
+        }
+
     }
 
 
@@ -222,7 +247,9 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         }
     }
 
-    private void gravaFilmesUsuario(long generoId, long filmeId) {
+
+
+    private void gravaFilmesUsuario ( long generoId, long filmeId){
 
         //ao clicar no item, incluir o genero e o filme na tabela de usuário
         new Thread(() -> {
@@ -234,7 +261,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         }).start();
     }
 
-    private void deletaFilmesUsuario(Filme filme) {
+    private void deletaFilmesUsuario (Filme filme){
 
         //ao clicar no item, deleta o genero e o filme na tabela de usuário
         new Thread(() -> {
@@ -244,7 +271,7 @@ public class DetalheFavoritosActivity extends AppCompatActivity
         }).start();
     }
 
-    private void buscarTodosOsGenerosFilmes() {
+    private void buscarTodosOsGenerosFilmes () {
 
         new Thread(() -> {
 
@@ -254,4 +281,5 @@ public class DetalheFavoritosActivity extends AppCompatActivity
 
         }).start();
     }
+
 }
