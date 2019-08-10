@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="br.com.digitalhouse.moviematch">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.wifi" />
+
+        <application
+        android:allowBackup="true"
+        android:icon="@drawable/filmesplash"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/filmesplash"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".meus_matchs.MeusMatchsActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".perfil.PerfilActivity" />
+
+        <activity
+            android:name=".dar_match.DarMatchActivity2"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+        <activity
+            android:name=".dar_match.DarMatchActivity3"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+        <activity
+            android:name=".dar_match.DarMatchActivity1"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+
+            <activity
+                android:name=".deu_match.DeuMatchActivity"
+                android:label="DEU MATCH!"
+                android:parentActivityName=".dar_match.DarMatchActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".dar_match.DarMatchActivity" />
+            </activity>
+
+        <activity
+            android:name=".dar_match.DarMatchActivity"
+            android:label="VAI DAR MATCH?"
+            android:parentActivityName=".favoritos.FavoritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".favoritos.FavoritosActivity" />
+        </activity>
+
+        <activity android:name=".favoritos.DetalheFavoritosActivity" />
+        <activity android:name=".favoritos.FavoritosDefinidosActivity"/>
+        <activity android:name=".favoritos.FavoritosActivity" />
+        <activity android:name=".cadastro.CadastroUsuarioActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundoMovie"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_simples"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#976DD0"
+                android:padding="4dp"
+                android:textColorHint="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:paddingStart="8dp"/>
+                <!-- android:drawableLeft="@drawable/emailpad" -->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#976DD0"
+                android:padding="4dp"
+                android:textColorHint="@color/colorAccent"
+                app:passwordToggleContentDescription="Mostrar"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/lockquestion"
+                    android:drawableRight="@drawable/eyeoff"
+                    android:drawableTint="@color/corfonteMovie"
+                    android:hint="@string/senha"
+                    android:inputType="textPassword"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="16dp"
+                    android:importantForAutofill="noExcludeDescendants">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnLoginLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/corBotaoSplash"
+                android:padding="16dp"
+                android:text="@string/login"
+                android:textAlignment="center"
+                android:textColor="#ffff" />
+
+            <Button
+                android:id="@+id/btnLoginCriarConta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/corBotaoSplash"
+                android:padding="16dp"
+                android:text="@string/criar_conta"
+                android:textAlignment="center"
+                android:textColor="#ffff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:background="@color/colorAccent"
+                    android:focusable="false" />
+
+                <TextView
+                    android:id="@+id/textViewLoginOr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:lines="1"
+                    android:padding="16dp"
+                    android:text="@string/ou"
+                    android:textColor="#ffffff" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:background="@color/colorAccent"
+                    android:focusable="false" />
+            </LinearLayout>
+
+            <!--Button
+                android:id="@+id/btnLoginFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/corBotaoSplash"
+                android:drawableLeft="@drawable/facebookbox"
+                android:padding="16dp"
+                android:text="@string/usar_facebook"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent" -->
+
+            <Button
+                android:id="@+id/btnLoginGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/corBotaoSplash"
+                android:drawableLeft="@drawable/google"
+                android:padding="16dp"
+                android:text="@string/usar_google"
+                android:textAlignment="center"
+                android:textColor="#ffff" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

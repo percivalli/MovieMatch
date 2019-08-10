@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Movie Match</string>
+    <string name="cadastro_do_usuario">CADASTRO DO USUÁRIO</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="nome">Nome</string>
+    <string name="idade">Idade</string>
+    <string name="sexo">Sexo</string>
+    <string name="cidade">Cidade</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="li_e_concordo_com_os_termos_de_uso">Li e concordo com os termos de uso.</string>
+    <string name="login_google">LOGIN GOOGLE</string>
+    <string name="login_facebook">LOGIN FACEBOOK</string>
+    <string name="prosseguir">Prosseguir</string>
+    <string name="mensagemFavoritosBottom">Mínimo 10, máximo 20. Quanto mais escolher, maior a chance de encontrar alguém com gostos parecidos!</string>
+    <string name="linguagem_prompt">Cidade</string>
+    <string name="usar_google">USAR GOOGLE</string>
+    <string name="usar_facebook">USAR FACEBOOK</string>
+    <string name="login">LOGIN</string>
+    <string name="criar_conta">CRIAR CONTA</string>
+    <string name="combo_1">Você e Marquito combinam 57%. Será que vai rolar?</string>
+    <string name="filmes_em_comum">Filmes em comum:</string>
+    <string name="filmes_0">Duro de Matar, A História do Mundo e Ratinho nos Cinemas</string>
+    <string name="g_neros_em_comum">Gêneros em comum:</string>
+    <string name="com_dia_e_a_o">Comédia e Ação</string>
+    <string name="ou">Ou</string>
+    <string name="voc_e_fulano_agora_podem_conversar_sobre_os_filmes_e_g_neros_que_tem_em_comum">Você e Cumpadi Uóshito Style agora podem conversar sobre os filmes e gêneros que têm em comum!</string>
+    <string name="sem_titulo">SEM TITULO</string>
+    <string name="match_1">Mulher Maravilha, PHP Em Ação e Alto da Compadecida</string>
+    <string name="generos_1">Ficção e Suspense</string>
+    <string name="combo_2">Você e Vini combinam 45%. Será que vai rolar?</string>
+    <string name="filmes_2">Quem Roubou Meus Direitos?, Fake News ao Resgate e Bambi</string>
+    <string name="genereos_2">Drama</string>
+    <string name="combo_3">Você e Biroliro Rocker combinam 15%. Será que vai rolar?</string>
+    <string name="filmes_3">Avengers: Endgame, Todo mundo em Pânico e Velozes e Furiosos</string>
+    <string name="comum_3">Ação e Comédia</string>
+    <string name="combo_4">Você e Cumpadi Uóshito Style combinam 99%. Será que vai rolar?</string>
+
+    <string-array name="arrayCidades">
+        <item>Cidade</item>
+        <item>São Paulo</item>
+        <item>Santo André</item>
+        <item>Guarulhos</item>
+    </string-array>
+
+    <string-array name="arrayInteresses">
+        <item>Interesse</item>
+        <item>Homens</item>
+        <item>Mulheres</item>
+        <item>Ambos</item>
+    </string-array>
+
+    <string-array name="arraySexo">
+        <item>Sexo</item>
+        <item>Feminino</item>
+        <item>Masculino</item>
+    </string-array>
+</resources>
